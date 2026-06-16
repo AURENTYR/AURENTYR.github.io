@@ -60,13 +60,27 @@
   font-weight: var(--fw-semibold);
 }
 
-@media (max-width: 767px) {
+@media (min-width: 768px) and (max-width: 1023px) {
   .title {
     font-size: var(--text-3xl);
   }
 
   .hero {
-    padding-block: var(--sp-12) var(--sp-8);
+    padding-block: var(--sp-12) var(--sp-10);
+  }
+
+  .content {
+    padding-block: var(--sp-12);
+  }
+}
+
+@media (max-width: 767px) {
+  .title {
+    font-size: var(--text-2xl);
+  }
+
+  .hero {
+    padding-block: var(--sp-10) var(--sp-8);
   }
 
   .content {
