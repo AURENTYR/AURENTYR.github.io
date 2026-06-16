@@ -9,6 +9,7 @@ Operational reference for deploying, verifying, and monitoring the AURENTYR webs
 Run through every item before cutting a production release.
 
 ### Code & build
+
 - [ ] All implementation milestones (M1–M7) merged to `main`
 - [ ] `npm run build` completes with zero errors and zero warnings
 - [ ] `npm run typecheck` passes
@@ -18,6 +19,7 @@ Run through every item before cutting a production release.
 - [ ] CI workflow green on latest `main` commit
 
 ### Content
+
 - [ ] All page copy reviewed and approved
 - [ ] No placeholder text ("Lorem ipsum", "TODO", "FIXME") in any page
 - [ ] Contact form endpoint configured (replace the `setTimeout` stub in `src/pages/Contact/Contact.tsx`)
@@ -26,6 +28,7 @@ Run through every item before cutting a production release.
 - [ ] Favicon renders correctly at 16×16, 32×32, 180×180
 
 ### SEO & meta
+
 - [ ] `<title>` unique on every page
 - [ ] `<meta name="description">` present and under 160 chars on every page
 - [ ] Open Graph tags verified with [opengraph.xyz](https://www.opengraph.xyz)
@@ -33,6 +36,7 @@ Run through every item before cutting a production release.
 - [ ] `sitemap.xml` valid at [xml-sitemaps.com/validate-xml-sitemap](https://www.xml-sitemaps.com/validate-xml-sitemap.html)
 
 ### Accessibility
+
 - [ ] axe DevTools browser extension — zero violations on every page
 - [ ] Keyboard navigation: Tab through every interactive element, confirm visible focus rings
 - [ ] Skip link visible on first Tab keypress
@@ -40,6 +44,7 @@ Run through every item before cutting a production release.
 - [ ] Color contrast: all text passes WCAG 2.1 AA (≥4.5:1 normal, ≥3:1 large)
 
 ### Performance (Lighthouse — Chrome DevTools, incognito)
+
 - [ ] Performance ≥ 90
 - [ ] Accessibility ≥ 95
 - [ ] Best Practices ≥ 90
@@ -47,6 +52,7 @@ Run through every item before cutting a production release.
 - [ ] Run on: `/`, `/about`, `/services`, `/contact`
 
 ### Cross-browser
+
 - [ ] Chrome (latest)
 - [ ] Firefox (latest)
 - [ ] Safari (latest)
@@ -65,6 +71,7 @@ git push origin main
 ```
 
 The `jekyll-gh-pages.yml` workflow will:
+
 1. Install Node.js 20 and run `npm ci`
 2. Run `npm run build` → outputs to `dist/`
 3. Upload `dist/` as a Pages artifact
@@ -105,18 +112,18 @@ Expected deploy time: **2–4 minutes** from push to live.
 
 After every production deploy, verify these manually (or via the automated smoke test workflow):
 
-| Check | URL | Expected |
-|---|---|---|
-| Homepage loads | `/` | 200, title = "AURENTYR" |
-| About page | `/about` | 200, title = "About \| AURENTYR" |
-| Services page | `/services` | 200, title = "Services \| AURENTYR" |
-| Contact page | `/contact` | 200, title = "Contact \| AURENTYR" |
-| 404 page | `/this-does-not-exist` | Shows 404 component (client-side) |
-| Sitemap | `/sitemap.xml` | 200, valid XML |
-| Robots | `/robots.txt` | 200 |
-| Favicon | `/favicon.svg` | 200 |
-| Nav hamburger | Mobile (375px) | Opens/closes, focus trap works |
-| Contact form | `/contact` | Validates all fields, shows success on submit |
+| Check          | URL                    | Expected                                      |
+| -------------- | ---------------------- | --------------------------------------------- |
+| Homepage loads | `/`                    | 200, title = "AURENTYR"                       |
+| About page     | `/about`               | 200, title = "About \| AURENTYR"              |
+| Services page  | `/services`            | 200, title = "Services \| AURENTYR"           |
+| Contact page   | `/contact`             | 200, title = "Contact \| AURENTYR"            |
+| 404 page       | `/this-does-not-exist` | Shows 404 component (client-side)             |
+| Sitemap        | `/sitemap.xml`         | 200, valid XML                                |
+| Robots         | `/robots.txt`          | 200                                           |
+| Favicon        | `/favicon.svg`         | 200                                           |
+| Nav hamburger  | Mobile (375px)         | Opens/closes, focus trap works                |
+| Contact form   | `/contact`             | Validates all fields, shows success on submit |
 
 ---
 
@@ -170,11 +177,11 @@ For a faster rollback during an incident: in GitHub repo → Actions → find th
 
 ## Incident response
 
-| Severity | Definition | SLA | Action |
-|---|---|---|---|
-| P0 | Site down / blank page | 30 min | Rollback immediately, investigate on branch |
-| P1 | Key page broken / nav broken | 2 hrs | Hotfix branch → PR → merge |
-| P2 | Visual regression / minor bug | Next sprint | File issue, prioritise in backlog |
+| Severity | Definition                    | SLA         | Action                                      |
+| -------- | ----------------------------- | ----------- | ------------------------------------------- |
+| P0       | Site down / blank page        | 30 min      | Rollback immediately, investigate on branch |
+| P1       | Key page broken / nav broken  | 2 hrs       | Hotfix branch → PR → merge                  |
+| P2       | Visual regression / minor bug | Next sprint | File issue, prioritise in backlog           |
 
 ---
 

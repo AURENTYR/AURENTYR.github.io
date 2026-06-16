@@ -7,15 +7,15 @@ Official GitHub Pages site for AURENTYR — built with React, TypeScript, and Vi
 
 ## Stack
 
-| Layer | Choice |
-|---|---|
-| Framework | React 18 |
-| Language | TypeScript (strict) |
-| Build tool | Vite 5 |
-| Routing | React Router v6 |
-| Styling | CSS Modules + design tokens |
-| Linting | ESLint + Stylelint + Prettier |
-| CI/CD | GitHub Actions → GitHub Pages |
+| Layer      | Choice                        |
+| ---------- | ----------------------------- |
+| Framework  | React 18                      |
+| Language   | TypeScript (strict)           |
+| Build tool | Vite 5                        |
+| Routing    | React Router v6               |
+| Styling    | CSS Modules + design tokens   |
+| Linting    | ESLint + Stylelint + Prettier |
+| CI/CD      | GitHub Actions → GitHub Pages |
 
 ## Project structure
 

@@ -28,17 +28,17 @@ export default function Button({
   children,
   ...rest
 }: ButtonProps) {
-  const cls = [
-    styles.btn,
-    styles[variant],
-    size !== "md" ? styles[size] : "",
-    className,
-  ]
+  const cls = [styles.btn, styles[variant], size !== "md" ? styles[size] : "", className]
     .filter(Boolean)
     .join(" ");
 
   if (rest.as === "link") {
-    const { as: _as, to, onClick, ...linkRest } = rest as ButtonAsLink & {
+    const {
+      as: _as,
+      to,
+      onClick,
+      ...linkRest
+    } = rest as ButtonAsLink & {
       variant?: Variant;
       size?: Size;
       className?: string;

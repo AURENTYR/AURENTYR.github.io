@@ -59,9 +59,10 @@ export default function Contact() {
 
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
-    const allTouched = Object.fromEntries(
-      Object.keys(EMPTY).map((k) => [k, true])
-    ) as Record<keyof Fields, boolean>;
+    const allTouched = Object.fromEntries(Object.keys(EMPTY).map((k) => [k, true])) as Record<
+      keyof Fields,
+      boolean
+    >;
     setTouched(allTouched);
     const errs = validate(values);
     setErrors(errs);
@@ -94,12 +95,7 @@ export default function Contact() {
 
   return (
     <PageShell title="Contact" subtitle="Let's talk about what you're building">
-      <form
-        className={styles.form}
-        onSubmit={handleSubmit}
-        noValidate
-        aria-label="Contact form"
-      >
+      <form className={styles.form} onSubmit={handleSubmit} noValidate aria-label="Contact form">
         {(
           [
             { id: "name", label: "Full Name", type: "text", autocomplete: "name" },
@@ -129,12 +125,7 @@ export default function Contact() {
               aria-describedby={`${id}-error`}
               aria-invalid={touched[id] && !!errors[id] ? "true" : undefined}
             />
-            <span
-              id={`${id}-error`}
-              className={styles.error}
-              role="alert"
-              aria-live="polite"
-            >
+            <span id={`${id}-error`} className={styles.error} role="alert" aria-live="polite">
               {touched[id] ? errors[id] : ""}
             </span>
           </div>
