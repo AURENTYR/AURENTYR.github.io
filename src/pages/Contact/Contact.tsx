@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import type { ChangeEvent, FormEvent } from "react";
 import PageShell from "@/components/PageShell/PageShell";
 import Button from "@/components/Button/Button";
+import { usePageTitle } from "@/hooks/usePageTitle";
 import styles from "./Contact.module.css";
 
 interface Fields {
@@ -36,9 +37,7 @@ export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
   const successRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    document.title = "Contact | AURENTYR";
-  }, []);
+  usePageTitle("Contact");
 
   useEffect(() => {
     if (submitted) successRef.current?.focus();

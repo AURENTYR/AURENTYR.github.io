@@ -1,5 +1,5 @@
-import { useEffect } from "react";
 import PageShell from "@/components/PageShell/PageShell";
+import { usePageTitle } from "@/hooks/usePageTitle";
 
 const VALUES = [
   { label: "Integrity", description: "We say what we mean and do what we say." },
@@ -9,9 +9,7 @@ const VALUES = [
 ] as const;
 
 export default function About() {
-  useEffect(() => {
-    document.title = "About | AURENTYR";
-  }, []);
+  usePageTitle("About");
 
   return (
     <PageShell title="About" subtitle="Who we are and what drives us">

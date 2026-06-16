@@ -1,11 +1,9 @@
-import { useEffect } from "react";
 import Button from "@/components/Button/Button";
+import { usePageTitle } from "@/hooks/usePageTitle";
 import styles from "./NotFound.module.css";
 
 export default function NotFound() {
-  useEffect(() => {
-    document.title = "404 — Page Not Found | AURENTYR";
-  }, []);
+  usePageTitle("404 — Page Not Found");
 
   return (
     <section className={styles.page} aria-labelledby="error-heading">
