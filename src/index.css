@@ -28,6 +28,12 @@
   padding-inline: var(--sp-6);
 }
 
+@media (max-width: 479px) {
+  .container {
+    padding-inline: var(--sp-4);
+  }
+}
+
 .container--md {
   max-width: var(--container-md);
 }

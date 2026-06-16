@@ -44,6 +44,7 @@ export default function Nav() {
           </NavLink>
 
           <button
+            type="button"
             className={`${styles.toggle} ${isOpen ? styles.toggleOpen : ""}`}
             aria-controls="nav-menu"
             aria-expanded={isOpen}
