@@ -1,5 +1,5 @@
-import { useEffect } from "react";
 import Button from "@/components/Button/Button";
+import { usePageTitle } from "@/hooks/usePageTitle";
 import styles from "./Home.module.css";
 
 const FEATURES = [
@@ -24,9 +24,7 @@ const FEATURES = [
 ] as const;
 
 export default function Home() {
-  useEffect(() => {
-    document.title = "AURENTYR";
-  }, []);
+  usePageTitle("");
 
   return (
     <>

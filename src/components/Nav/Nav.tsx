@@ -68,7 +68,6 @@ export default function Nav() {
                   className={({ isActive }) =>
                     `${styles.link} ${isActive ? styles.linkActive : ""}`
                   }
-                  aria-current={undefined}
                   onClick={close}
                 >
                   {label}

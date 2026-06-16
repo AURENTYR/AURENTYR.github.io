@@ -1,6 +1,6 @@
-import { useEffect } from "react";
 import PageShell from "@/components/PageShell/PageShell";
 import Button from "@/components/Button/Button";
+import { usePageTitle } from "@/hooks/usePageTitle";
 import styles from "./Services.module.css";
 
 const SERVICES = [
@@ -27,9 +27,7 @@ const SERVICES = [
 ] as const;
 
 export default function Services() {
-  useEffect(() => {
-    document.title = "Services | AURENTYR";
-  }, []);
+  usePageTitle("Services");
 
   return (
     <PageShell title="Services" subtitle="What we do and how we can help" narrow={false}>
