@@ -1,0 +1,75 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero {
+  padding-block: var(--sp-16) var(--sp-12);
+  background: linear-gradient(135deg, var(--color-brand-primary) 0%, #16213e 100%);
+  color: var(--color-text-inverse);
+}
+
+.title {
+  font-size: var(--text-4xl);
+  color: var(--color-text-inverse);
+  margin-bottom: var(--sp-3);
+}
+
+.subtitle {
+  font-size: var(--text-lg);
+  color: rgb(255 255 255 / 0.75);
+}
+
+.content {
+  padding-block: var(--sp-16);
+  flex: 1;
+}
+
+/* Prose typography */
+.content h2 {
+  font-size: var(--text-2xl);
+  color: var(--color-text-primary);
+  margin-top: var(--sp-10);
+  margin-bottom: var(--sp-4);
+}
+
+.content h2:first-child {
+  margin-top: 0;
+}
+
+.content p {
+  color: var(--color-text-secondary);
+  line-height: var(--lh-relaxed);
+  margin-bottom: var(--sp-5);
+}
+
+.content ul {
+  list-style: disc;
+  padding-left: var(--sp-6);
+  margin-bottom: var(--sp-5);
+}
+
+.content li {
+  color: var(--color-text-secondary);
+  line-height: var(--lh-relaxed);
+  margin-bottom: var(--sp-2);
+}
+
+.content strong {
+  color: var(--color-text-primary);
+  font-weight: var(--fw-semibold);
+}
+
+@media (max-width: 767px) {
+  .title {
+    font-size: var(--text-3xl);
+  }
+
+  .hero {
+    padding-block: var(--sp-12) var(--sp-8);
+  }
+
+  .content {
+    padding-block: var(--sp-10);
+  }
+}

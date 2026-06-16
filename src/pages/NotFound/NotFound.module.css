@@ -1,0 +1,37 @@
+.page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 64px - 260px);
+  padding-block: var(--sp-20);
+  text-align: center;
+}
+
+.code {
+  font-size: 8rem;
+  font-weight: var(--fw-bold);
+  color: var(--color-primary);
+  line-height: 1;
+  margin-bottom: var(--sp-4);
+  opacity: 0.15;
+  user-select: none;
+}
+
+.title {
+  font-size: var(--text-3xl);
+  color: var(--color-text-primary);
+  margin-bottom: var(--sp-4);
+}
+
+.description {
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--sp-10);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-4);
+  justify-content: center;
+}
