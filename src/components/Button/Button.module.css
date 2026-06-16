@@ -59,14 +59,14 @@
 
 .outline {
   background-color: transparent;
-  border-color: rgb(255 255 255 / 0.35);
-  color: #ffffff;
+  border-color: rgb(255 255 255 / 35%);
+  color: #fff;
 }
 
 .outline:hover {
-  background-color: rgb(255 255 255 / 0.1);
-  border-color: rgb(255 255 255 / 0.65);
-  color: #ffffff;
+  background-color: rgb(255 255 255 / 10%);
+  border-color: rgb(255 255 255 / 65%);
+  color: #fff;
 }
 
 .sm {

@@ -5,17 +5,17 @@
   --color-brand-accent-hover: #c73652;
 
   /* Surface — light mode */
-  --color-bg: #ffffff;
+  --color-bg: #fff;
   --color-bg-subtle: #f6f8fa;
   --color-bg-muted: #eaeef2;
-  --color-surface: #ffffff;
+  --color-surface: #fff;
   --color-surface-raised: #f6f8fa;
 
   /* Text */
   --color-text-primary: #1a1a2e;
   --color-text-secondary: #57606a;
   --color-text-muted: #8c959f;
-  --color-text-inverse: #ffffff;
+  --color-text-inverse: #fff;
   --color-text-accent: #e94560;
 
   /* Border */
@@ -26,12 +26,13 @@
   /* Interactive */
   --color-primary: #e94560;
   --color-primary-hover: #c73652;
-  --color-primary-fg: #ffffff;
+  --color-primary-fg: #fff;
   --color-focus-ring: #0969da;
 
   /* Typography */
-  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
+  --font-sans:
+    "Inter", -apple-system, "BlinkMacSystemFont", "Segoe UI", "Helvetica", "Arial", sans-serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", "Consolas", monospace;
 
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;
@@ -81,9 +82,9 @@
   --radius-full: 9999px;
 
   /* Shadow */
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 5%);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -2px rgb(0 0 0 / 10%);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 10%), 0 4px 6px -4px rgb(0 0 0 / 10%);
 
   /* Motion */
   --duration-fast: 100ms;

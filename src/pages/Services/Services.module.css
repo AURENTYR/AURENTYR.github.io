@@ -5,7 +5,7 @@
   margin-bottom: var(--sp-12);
 }
 
-@media (max-width: 767px) {
+@media (width <= 767px) {
   .grid {
     grid-template-columns: 1fr;
   }

@@ -102,7 +102,7 @@
   transform: translateY(-7px) rotate(-45deg);
 }
 
-@media (max-width: 767px) {
+@media (width <= 767px) {
   .toggle {
     display: flex;
   }
