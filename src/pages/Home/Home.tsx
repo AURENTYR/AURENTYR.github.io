@@ -55,8 +55,8 @@ export default function Home() {
               Explore what we build and how we can work together.
             </p>
             <div className={styles.heroActions}>
-              <Button as="link" to="/services" variant="primary" size="lg">
-                Explore Services
+              <Button as="link" to="/about" variant="primary" size="lg">
+                Learn More
               </Button>
               <Button as="link" to="/contact" variant="outline" size="lg">
                 Get in Touch

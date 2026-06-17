@@ -6,7 +6,6 @@ import styles from "./Nav.module.css";
 const NAV_LINKS = [
   { to: "/", label: "Home", end: true },
   { to: "/about", label: "About", end: false },
-  { to: "/services", label: "Services", end: false },
 ] as const;
 
 export default function Nav() {

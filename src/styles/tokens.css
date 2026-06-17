@@ -1,8 +1,9 @@
 :root {
-  /* Brand */
-  --color-brand-primary: #1a1a2e;
-  --color-brand-accent: #e94560;
-  --color-brand-accent-hover: #c73652;
+  /* Brand — deep navy authority + restrained gold accent (holding-company identity) */
+  --color-brand-primary: #0d1f33;
+  --color-brand-primary-2: #16314f;
+  --color-brand-accent: #c79a3a;
+  --color-brand-accent-hover: #b3862c;
 
   /* Surface — light mode */
   --color-bg: #fff;
@@ -12,20 +13,20 @@
   --color-surface-raised: #f6f8fa;
 
   /* Text */
-  --color-text-primary: #1a1a2e;
+  --color-text-primary: #0d1f33;
   --color-text-secondary: #57606a;
   --color-text-muted: #8c959f;
   --color-text-inverse: #fff;
-  --color-text-accent: #e94560;
+  --color-text-accent: #13507c;
 
   /* Border */
   --color-border: #d0d7de;
   --color-border-subtle: #eaeef2;
-  --color-border-accent: #e94560;
+  --color-border-accent: #c79a3a;
 
-  /* Interactive */
-  --color-primary: #e94560;
-  --color-primary-hover: #c73652;
+  /* Interactive — navy-blue chosen for AA contrast on white (gold is decorative only) */
+  --color-primary: #13507c;
+  --color-primary-hover: #0f3f61;
   --color-primary-fg: #fff;
   --color-focus-ring: #0969da;
 
@@ -109,15 +110,15 @@
     --color-text-primary: #e6edf3;
     --color-text-secondary: #8d96a0;
     --color-text-muted: #656d76;
-    --color-text-inverse: #0d1117;
-    --color-text-accent: #f0768a;
+    --color-text-inverse: #fff;
+    --color-text-accent: #6fb0e6;
 
     --color-border: #30363d;
     --color-border-subtle: #21262d;
-    --color-border-accent: #f0768a;
+    --color-border-accent: #d8b35a;
 
-    --color-primary: #f0768a;
-    --color-primary-hover: #e94560;
+    --color-primary: #5a9bd4;
+    --color-primary-hover: #7ab0de;
     --color-primary-fg: #0d1117;
   }
 }
