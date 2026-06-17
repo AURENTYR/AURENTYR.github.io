@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { NavLink } from "react-router-dom";
 import Button from "@/components/Button/Button";
+import BrandMark from "@/components/BrandMark/BrandMark";
 import styles from "./Nav.module.css";
 
 const NAV_LINKS = [
@@ -40,7 +41,8 @@ export default function Nav() {
       <nav className="container" aria-label="Main navigation">
         <div className={styles.inner}>
           <NavLink to="/" className={styles.logo} aria-label="AURENTYR home" onClick={close}>
-            AURENTYR
+            <BrandMark size={28} className={styles.logoMark} />
+            <span className={styles.logoText}>AURENTYR</span>
           </NavLink>
 
           <button

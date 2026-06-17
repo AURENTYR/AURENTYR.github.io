@@ -16,16 +16,26 @@
 }
 
 .logo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
   text-decoration: none;
+  transition: opacity var(--duration-fast) var(--ease-standard);
+}
+
+.logoMark {
+  flex-shrink: 0;
+}
+
+.logoText {
   font-size: var(--text-xl);
   font-weight: var(--fw-bold);
   color: var(--color-text-primary);
-  letter-spacing: 0.05em;
-  transition: color var(--duration-fast) var(--ease-standard);
+  letter-spacing: 0.08em;
 }
 
 .logo:hover {
-  color: var(--color-primary);
+  opacity: 0.8;
 }
 
 .menu {

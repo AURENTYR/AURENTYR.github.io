@@ -13,18 +13,24 @@
 }
 
 .logo {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
   font-size: var(--text-xl);
   font-weight: var(--fw-bold);
   color: var(--color-text-inverse);
   text-decoration: none;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
   margin-bottom: var(--sp-3);
-  transition: color var(--duration-fast) var(--ease-standard);
+  transition: opacity var(--duration-fast) var(--ease-standard);
+}
+
+.logoMark {
+  flex-shrink: 0;
 }
 
 .logo:hover {
-  color: var(--color-primary);
+  opacity: 0.8;
 }
 
 .tagline {

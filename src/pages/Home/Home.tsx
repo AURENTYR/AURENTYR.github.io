@@ -1,28 +1,31 @@
 import Button from "@/components/Button/Button";
+import Icon from "@/components/Icon/Icon";
+import type { IconName } from "@/components/Icon/Icon";
+import BrandMark from "@/components/BrandMark/BrandMark";
 import { usePageTitle } from "@/hooks/usePageTitle";
 import { verticals } from "@/data/verticals";
 import styles from "./Home.module.css";
 
-const PILLARS = [
+const PILLARS: { icon: IconName; title: string; description: string }[] = [
   {
-    icon: "◈",
+    icon: "horizon",
     title: "Long-Horizon Ownership",
     description:
       "We build and hold. AURENTYR backs each venture with patient capital and a multi-decade view, not a quick exit.",
   },
   {
-    icon: "⟳",
+    icon: "support",
     title: "Operating Support",
     description:
       "Each vertical runs independently but draws on shared strategy, governance, and capital discipline from the group.",
   },
   {
-    icon: "◎",
+    icon: "expansion",
     title: "Selective Expansion",
     description:
       "We add verticals deliberately — entering sectors where durable value can be built, from land to applied AI.",
   },
-] as const;
+];
 
 const ACTIVE_COUNT = verticals.filter((v) => v.status === "active").length;
 
@@ -50,9 +53,12 @@ export default function Home() {
 
       {/* Hero */}
       <section className={styles.hero} aria-labelledby="hero-heading">
+        <BrandMark size={420} className={styles.heroWatermark} />
         <div className="container">
           <div className={styles.heroContent}>
-            <span className={styles.eyebrow}>A holding company</span>
+            <span className={styles.eyebrow}>
+              <BrandMark size={16} className={styles.eyebrowMark} />A holding company
+            </span>
             <h1 className={styles.heroTitle} id="hero-heading">
               Building enduring businesses,
               <br />
@@ -133,7 +139,7 @@ export default function Home() {
             {PILLARS.map(({ icon, title, description }) => (
               <article key={title} className={styles.card}>
                 <div className={styles.cardIcon} aria-hidden="true">
-                  {icon}
+                  <Icon name={icon} size={26} />
                 </div>
                 <h3 className={styles.cardTitle}>{title}</h3>
                 <p className={styles.cardDescription}>{description}</p>

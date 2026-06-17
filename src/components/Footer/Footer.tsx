@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
+import BrandMark from "@/components/BrandMark/BrandMark";
 import styles from "./Footer.module.css";
 
 const LINKS = [
   { to: "/", label: "Home" },
+  { to: "/verticals", label: "Verticals" },
   { to: "/about", label: "About" },
-  { to: "/services", label: "Services" },
   { to: "/contact", label: "Contact" },
 ] as const;
 
@@ -14,9 +15,12 @@ export default function Footer() {
       <div className={`container ${styles.inner}`}>
         <div>
           <Link to="/" className={styles.logo} aria-label="AURENTYR home">
-            AURENTYR
+            <BrandMark size={26} className={styles.logoMark} />
+            <span>AURENTYR</span>
           </Link>
-          <p className={styles.tagline}>Delivering excellence through innovation and precision.</p>
+          <p className={styles.tagline}>
+            A holding company building enduring businesses across multiple sectors.
+          </p>
         </div>
 
         <nav aria-label="Footer navigation">
