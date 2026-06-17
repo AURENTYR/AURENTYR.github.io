@@ -11,7 +11,7 @@ const PILLARS: { icon: IconName; title: string; description: string }[] = [
     icon: "horizon",
     title: "Long-Horizon Ownership",
     description:
-      "We build and hold. AURENTYR backs each venture with patient capital and a multi-decade view, not a quick exit.",
+      "We build and hold. Aurentyr backs each venture with patient capital and a multi-decade view, not a quick exit.",
   },
   {
     icon: "support",
@@ -39,10 +39,10 @@ export default function Home() {
         {JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Organization",
-          name: "AURENTYR",
+          name: "Aurentyr",
           url: "https://aurentyr.github.io",
           description:
-            "AURENTYR is a holding company building and operating a group of businesses across land, property, and AI healthcare.",
+            "Aurentyr is a holding company building and operating a group of businesses across land, property, and AI healthcare.",
           subOrganization: verticals.map((v) => ({
             "@type": "Organization",
             name: v.name,
@@ -65,7 +65,7 @@ export default function Home() {
               <span className={styles.highlight}>one vertical at a time.</span>
             </h1>
             <p className={styles.heroDescription}>
-              AURENTYR is a holding company that builds, owns, and operates ventures across multiple
+              Aurentyr is a holding company that builds, owns, and operates ventures across multiple
               sectors — anchored today in land and property, and expanding into AI healthcare.
             </p>
             <div className={styles.heroActions}>
@@ -89,7 +89,7 @@ export default function Home() {
               {ACTIVE_COUNT === 1 ? "One active vertical, more on the way" : "Our verticals"}
             </h2>
             <p className={styles.sectionDescription}>
-              A focused portfolio of businesses, each operating in its own sector under the AURENTYR
+              A focused portfolio of businesses, each operating in its own sector under the Aurentyr
               group.
             </p>
           </header>
@@ -153,7 +153,7 @@ export default function Home() {
       <section className={styles.cta} aria-labelledby="cta-heading">
         <div className="container">
           <h2 className={styles.sectionTitle} id="cta-heading">
-            Invest or partner with AURENTYR
+            Invest or partner with Aurentyr
           </h2>
           <p className={styles.sectionDescription}>
             We work with investors and partners who share a long-term view. Let's talk about where

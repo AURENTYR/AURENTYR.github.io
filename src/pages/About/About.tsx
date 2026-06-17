@@ -24,11 +24,11 @@ export default function About() {
   usePageTitle("About");
 
   return (
-    <PageShell title="About AURENTYR" subtitle="Our thesis, and where the group is headed">
+    <PageShell title="About Aurentyr" subtitle="Our thesis, and where the group is headed">
       <section aria-label="Who we are">
         <h2>Who We Are</h2>
         <p>
-          AURENTYR is a holding company. We build, own, and operate a group of businesses across
+          Aurentyr is a holding company. We build, own, and operate a group of businesses across
           distinct sectors — bringing long-term capital, shared governance, and operating discipline
           to each one, while letting every vertical run on its own terms.
         </p>
@@ -58,7 +58,7 @@ export default function About() {
       <section aria-label="Where we are headed">
         <h2>Where We Are Headed</h2>
         <p>
-          Today AURENTYR is anchored in land and property, with an AI healthcare venture in early
+          Today Aurentyr is anchored in land and property, with an AI healthcare venture in early
           development. Our long-term ambition is a resilient group of complementary businesses —
           added one vertical at a time, each strengthening the whole.
         </p>
@@ -68,7 +68,7 @@ export default function About() {
         <h2>Leadership</h2>
         {/* TODO: replace with real leadership bios and photos when available. */}
         <p>
-          AURENTYR is led by a founding team with conviction in long-horizon ownership. Detailed
+          Aurentyr is led by a founding team with conviction in long-horizon ownership. Detailed
           leadership profiles will be published here soon.
         </p>
       </section>

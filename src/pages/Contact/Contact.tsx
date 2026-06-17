@@ -122,7 +122,7 @@ export default function Contact() {
 
   if (status === "success") {
     return (
-      <PageShell title="Get in Touch" subtitle="Partner or invest with AURENTYR">
+      <PageShell title="Get in Touch" subtitle="Partner or invest with Aurentyr">
         <div
           ref={successRef}
           className={styles.success}
@@ -130,7 +130,7 @@ export default function Contact() {
           aria-live="polite"
           tabIndex={-1}
         >
-          <strong>Thank you — your message is on its way.</strong> A member of the AURENTYR team
+          <strong>Thank you — your message is on its way.</strong> A member of the Aurentyr team
           will be in touch shortly.
         </div>
       </PageShell>
@@ -138,11 +138,11 @@ export default function Contact() {
   }
 
   const mailtoHref = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
-    `${values.enquiryType || "Enquiry"} — ${values.name || "AURENTYR website"}`
+    `${values.enquiryType || "Enquiry"} — ${values.name || "Aurentyr website"}`
   )}&body=${encodeURIComponent(values.message)}`;
 
   return (
-    <PageShell title="Get in Touch" subtitle="Partner or invest with AURENTYR">
+    <PageShell title="Get in Touch" subtitle="Partner or invest with Aurentyr">
       <p className={styles.intro}>
         We work with investors and partners who share a long-term view of the businesses we build.
         Tell us a little about your interest and we'll get back to you.

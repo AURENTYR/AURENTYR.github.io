@@ -41,7 +41,7 @@ jobs:
       - name: Verify homepage contains expected content
         run: |
           BODY=$(curl -s https://aurentyr.github.io/)
-          echo "$BODY" | grep -q "AURENTYR" || (echo "FAIL: homepage missing AURENTYR in content" && exit 1)
+          echo "$BODY" | grep -q "Aurentyr" || (echo "FAIL: homepage missing Aurentyr in content" && exit 1)
           echo "Content check passed"
 
       - name: Verify sitemap references correct domain

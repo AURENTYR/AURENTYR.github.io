@@ -40,9 +40,9 @@ export default function Nav() {
     <header className={styles.header} role="banner">
       <nav className="container" aria-label="Main navigation">
         <div className={styles.inner}>
-          <NavLink to="/" className={styles.logo} aria-label="AURENTYR home" onClick={close}>
+          <NavLink to="/" className={styles.logo} aria-label="Aurentyr home" onClick={close}>
             <BrandMark size={28} className={styles.logoMark} />
-            <span className={styles.logoText}>AURENTYR</span>
+            <span className={styles.logoText}>Aurentyr</span>
           </NavLink>
 
           <button

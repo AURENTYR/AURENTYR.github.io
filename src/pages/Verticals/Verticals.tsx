@@ -16,7 +16,7 @@ export default function Verticals() {
   return (
     <PageShell
       title="Our Verticals"
-      subtitle="The businesses that make up the AURENTYR group — today and as we grow."
+      subtitle="The businesses that make up the Aurentyr group — today and as we grow."
     >
       <ul className={styles.grid} role="list">
         {verticals.map((v) => (

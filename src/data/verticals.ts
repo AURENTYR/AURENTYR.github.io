@@ -1,5 +1,5 @@
 /**
- * AURENTYR group verticals — single source of truth.
+ * Aurentyr group verticals — single source of truth.
  *
  * This file is the ONLY place you need to edit to add, remove, or update a
  * business vertical. The homepage "Group at a Glance" section and the
@@ -40,7 +40,7 @@ export const verticals: Vertical[] = [
     // TODO: replace placeholder copy with the real LIE positioning when finalised.
     tagline: "Land acquisition and property development across emerging corridors.",
     description:
-      "LIE is AURENTYR's land and property vertical — focused on acquiring, " +
+      "LIE is Aurentyr's land and property vertical — focused on acquiring, " +
       "assembling, and developing land in high-growth corridors. It anchors the " +
       "group's portfolio with tangible, appreciating assets and long-horizon value.",
     status: "active",
@@ -52,7 +52,7 @@ export const verticals: Vertical[] = [
     // TODO: replace placeholder name + copy once the healthcare vertical is named and scoped.
     tagline: "AI-driven healthcare — applying intelligence to clinical and patient outcomes.",
     description:
-      "AURENTYR's healthcare vertical will bring applied AI to clinical and patient " +
+      "Aurentyr's healthcare vertical will bring applied AI to clinical and patient " +
       "workflows. Currently in early development; more detail will be shared as the " +
       "venture takes shape.",
     status: "coming-soon",

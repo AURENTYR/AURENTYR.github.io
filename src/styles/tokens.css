@@ -1,34 +1,35 @@
 :root {
-  /* Brand — deep navy authority + restrained gold accent (holding-company identity) */
-  --color-brand-primary: #0d1f33;
-  --color-brand-primary-2: #16314f;
-  --color-brand-accent: #c79a3a;
-  --color-brand-accent-hover: #b3862c;
+  /* Brand — calm deep teal + soft sage. Chosen to feel soothing and
+     trustworthy; all generic tones, no trademarked brand colors. */
+  --color-brand-primary: #1c3b3a;
+  --color-brand-primary-2: #244e4a;
+  --color-brand-accent: #7fa99b;
+  --color-brand-accent-hover: #6a9387;
 
-  /* Surface — light mode */
-  --color-bg: #fff;
-  --color-bg-subtle: #f6f8fa;
-  --color-bg-muted: #eaeef2;
-  --color-surface: #fff;
-  --color-surface-raised: #f6f8fa;
+  /* Surface — light mode (warm off-white is easier on the eyes than stark white) */
+  --color-bg: #faf9f6;
+  --color-bg-subtle: #f2f0ea;
+  --color-bg-muted: #e7e3d9;
+  --color-surface: #fffefb;
+  --color-surface-raised: #f5f3ed;
 
   /* Text */
-  --color-text-primary: #0d1f33;
-  --color-text-secondary: #57606a;
-  --color-text-muted: #8c959f;
+  --color-text-primary: #1f2f30;
+  --color-text-secondary: #586568;
+  --color-text-muted: #8a9598;
   --color-text-inverse: #fff;
-  --color-text-accent: #13507c;
+  --color-text-accent: #2f6f68;
 
   /* Border */
-  --color-border: #d0d7de;
-  --color-border-subtle: #eaeef2;
-  --color-border-accent: #c79a3a;
+  --color-border: #ddd7cb;
+  --color-border-subtle: #ece8df;
+  --color-border-accent: #7fa99b;
 
-  /* Interactive — navy-blue chosen for AA contrast on white (gold is decorative only) */
-  --color-primary: #13507c;
-  --color-primary-hover: #0f3f61;
+  /* Interactive — teal chosen for AA contrast on the warm background */
+  --color-primary: #2f6f68;
+  --color-primary-hover: #25564f;
   --color-primary-fg: #fff;
-  --color-focus-ring: #0969da;
+  --color-focus-ring: #1d70b8;
 
   /* Typography */
   --font-sans:
@@ -102,24 +103,24 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-bg: #0d1117;
-    --color-bg-subtle: #161b22;
-    --color-bg-muted: #21262d;
-    --color-surface: #161b22;
-    --color-surface-raised: #21262d;
+    --color-bg: #0f1c1b;
+    --color-bg-subtle: #142523;
+    --color-bg-muted: #1d302e;
+    --color-surface: #152825;
+    --color-surface-raised: #1d302e;
 
-    --color-text-primary: #e6edf3;
-    --color-text-secondary: #8d96a0;
-    --color-text-muted: #656d76;
-    --color-text-inverse: #fff;
-    --color-text-accent: #6fb0e6;
+    --color-text-primary: #e7ece9;
+    --color-text-secondary: #8ea09b;
+    --color-text-muted: #6a7a76;
+    --color-text-inverse: #0f1c1b;
+    --color-text-accent: #79c2b6;
 
-    --color-border: #30363d;
-    --color-border-subtle: #21262d;
-    --color-border-accent: #d8b35a;
+    --color-border: #2b3d3a;
+    --color-border-subtle: #1d302e;
+    --color-border-accent: #7fa99b;
 
-    --color-primary: #5a9bd4;
-    --color-primary-hover: #7ab0de;
-    --color-primary-fg: #0d1117;
+    --color-primary: #5fb3a6;
+    --color-primary-hover: #79c2b6;
+    --color-primary-fg: #0f1c1b;
   }
 }

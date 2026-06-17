@@ -14,9 +14,9 @@ export default function Footer() {
     <footer className={styles.footer} role="contentinfo">
       <div className={`container ${styles.inner}`}>
         <div>
-          <Link to="/" className={styles.logo} aria-label="AURENTYR home">
+          <Link to="/" className={styles.logo} aria-label="Aurentyr home">
             <BrandMark size={26} className={styles.logoMark} />
-            <span>AURENTYR</span>
+            <span className={styles.logoText}>Aurentyr</span>
           </Link>
           <p className={styles.tagline}>
             A holding company building enduring businesses across multiple sectors.
@@ -39,7 +39,7 @@ export default function Footer() {
       <div className={styles.bottom}>
         <div className="container">
           <p className={styles.copy}>
-            &copy; {new Date().getFullYear()} AURENTYR. All rights reserved.
+            &copy; {new Date().getFullYear()} Aurentyr. All rights reserved.
           </p>
         </div>
       </div>

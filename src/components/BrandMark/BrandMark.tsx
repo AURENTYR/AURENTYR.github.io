@@ -7,10 +7,10 @@ interface BrandMarkProps {
 }
 
 /**
- * AURENTYR brand emblem — a faceted "A" fusing a keystone (the arch that holds
- * the group together) with two-tone gold facets (the gem / "aurum" value motif).
- * Colors come from the brand-accent tokens so the mark stays on-brand in any
- * context. Scales cleanly from favicon size to hero.
+ * Aurentyr brand emblem — a faceted "A" fusing a keystone (the arch that holds
+ * the group together) with two-tone facets (the gem / value motif). Colors come
+ * from the brand-accent tokens so the mark stays on-brand in any context.
+ * Scales cleanly from favicon size to hero.
  */
 export default function BrandMark({ size = 28, title, className }: BrandMarkProps) {
   return (

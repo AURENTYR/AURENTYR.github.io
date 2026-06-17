@@ -1,6 +1,6 @@
-# AURENTYR Launch Runbook
+# Aurentyr Launch Runbook
 
-Operational reference for deploying, verifying, and monitoring the AURENTYR website.
+Operational reference for deploying, verifying, and monitoring the Aurentyr website.
 
 ---
 
@@ -118,10 +118,10 @@ After every production deploy, verify these manually (or via the automated smoke
 
 | Check          | URL                    | Expected                                      |
 | -------------- | ---------------------- | --------------------------------------------- |
-| Homepage loads | `/`                    | 200, title = "AURENTYR"                       |
-| Verticals page | `/verticals`           | 200, title = "Verticals \| AURENTYR"          |
-| About page     | `/about`               | 200, title = "About \| AURENTYR"              |
-| Contact page   | `/contact`             | 200, title = "Contact \| AURENTYR"            |
+| Homepage loads | `/`                    | 200, title = "Aurentyr"                       |
+| Verticals page | `/verticals`           | 200, title = "Verticals \| Aurentyr"          |
+| About page     | `/about`               | 200, title = "About \| Aurentyr"              |
+| Contact page   | `/contact`             | 200, title = "Contact \| Aurentyr"            |
 | 404 page       | `/this-does-not-exist` | Shows 404 component (client-side)             |
 | Sitemap        | `/sitemap.xml`         | 200, valid XML                                |
 | Robots         | `/robots.txt`          | 200                                           |
@@ -152,7 +152,7 @@ Recommended: **UptimeRobot** (free tier — 5-minute checks, email alerts)
 1. Sign up at [uptimerobot.com](https://uptimerobot.com)
 2. Add monitor:
    - Monitor Type: HTTP(s)
-   - Friendly Name: AURENTYR Website
+   - Friendly Name: Aurentyr Website
    - URL: `https://aurentyr.github.io`
    - Monitoring Interval: 5 minutes
 3. Add alert contact (your email)
