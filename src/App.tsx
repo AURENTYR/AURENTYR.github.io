@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "@/components/Layout/Layout";
 
 const Home = lazy(() => import("@/pages/Home/Home"));
+const Verticals = lazy(() => import("@/pages/Verticals/Verticals"));
 const About = lazy(() => import("@/pages/About/About"));
 const Contact = lazy(() => import("@/pages/Contact/Contact"));
 const NotFound = lazy(() => import("@/pages/NotFound/NotFound"));
@@ -23,6 +24,14 @@ export default function App() {
             element={
               <Suspense fallback={<PageLoader />}>
                 <Home />
+              </Suspense>
+            }
+          />
+          <Route
+            path="verticals"
+            element={
+              <Suspense fallback={<PageLoader />}>
+                <Verticals />
               </Suspense>
             }
           />

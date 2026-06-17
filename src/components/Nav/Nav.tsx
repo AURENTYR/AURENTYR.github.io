@@ -5,6 +5,7 @@ import styles from "./Nav.module.css";
 
 const NAV_LINKS = [
   { to: "/", label: "Home", end: true },
+  { to: "/verticals", label: "Verticals", end: false },
   { to: "/about", label: "About", end: false },
 ] as const;
 
