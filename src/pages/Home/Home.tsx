@@ -1,27 +1,30 @@
 import Button from "@/components/Button/Button";
 import { usePageTitle } from "@/hooks/usePageTitle";
+import { verticals } from "@/data/verticals";
 import styles from "./Home.module.css";
 
-const FEATURES = [
+const PILLARS = [
   {
     icon: "◈",
-    title: "Precision Engineering",
+    title: "Long-Horizon Ownership",
     description:
-      "Every detail is crafted with purpose. We hold our work to the highest standards of quality and reliability.",
+      "We build and hold. AURENTYR backs each venture with patient capital and a multi-decade view, not a quick exit.",
   },
   {
     icon: "⟳",
-    title: "Continuous Innovation",
+    title: "Operating Support",
     description:
-      "Staying ahead means embracing change. We invest in emerging technologies and forward-thinking approaches.",
+      "Each vertical runs independently but draws on shared strategy, governance, and capital discipline from the group.",
   },
   {
     icon: "◎",
-    title: "Client-First Focus",
+    title: "Selective Expansion",
     description:
-      "Your goals drive our decisions. We build partnerships rooted in transparency, trust, and shared success.",
+      "We add verticals deliberately — entering sectors where durable value can be built, from land to applied AI.",
   },
 ] as const;
+
+const ACTIVE_COUNT = verticals.filter((v) => v.status === "active").length;
 
 export default function Home() {
   usePageTitle("");
@@ -36,7 +39,12 @@ export default function Home() {
           name: "AURENTYR",
           url: "https://aurentyr.github.io",
           description:
-            "AURENTYR — delivering excellence through innovation, precision, and forward-thinking solutions.",
+            "AURENTYR is a holding company building and operating a group of businesses across land, property, and AI healthcare.",
+          subOrganization: verticals.map((v) => ({
+            "@type": "Organization",
+            name: v.name,
+            description: v.tagline,
+          })),
         })}
       </script>
 
@@ -44,44 +52,85 @@ export default function Home() {
       <section className={styles.hero} aria-labelledby="hero-heading">
         <div className="container">
           <div className={styles.heroContent}>
-            <span className={styles.eyebrow}>Welcome to AURENTYR</span>
+            <span className={styles.eyebrow}>A holding company</span>
             <h1 className={styles.heroTitle} id="hero-heading">
-              Built for the <span className={styles.highlight}>Future</span>,
+              Building enduring businesses,
               <br />
-              Delivered Today.
+              <span className={styles.highlight}>one vertical at a time.</span>
             </h1>
             <p className={styles.heroDescription}>
-              AURENTYR brings precision, innovation, and forward momentum to everything we do.
-              Explore what we build and how we can work together.
+              AURENTYR is a holding company that builds, owns, and operates ventures across multiple
+              sectors — anchored today in land and property, and expanding into AI healthcare.
             </p>
             <div className={styles.heroActions}>
-              <Button as="link" to="/about" variant="primary" size="lg">
-                Learn More
+              <Button as="link" to="/verticals" variant="primary" size="lg">
+                Our Portfolio
               </Button>
               <Button as="link" to="/contact" variant="outline" size="lg">
-                Get in Touch
+                Work With Us
               </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Features */}
+      {/* Group at a Glance */}
+      <section className={styles.glance} aria-labelledby="glance-heading">
+        <div className="container">
+          <header className={styles.sectionHeader}>
+            <span className={styles.sectionLabel}>Group at a glance</span>
+            <h2 className={styles.sectionTitle} id="glance-heading">
+              {ACTIVE_COUNT === 1 ? "One active vertical, more on the way" : "Our verticals"}
+            </h2>
+            <p className={styles.sectionDescription}>
+              A focused portfolio of businesses, each operating in its own sector under the AURENTYR
+              group.
+            </p>
+          </header>
+
+          <ul className={styles.glanceList} role="list">
+            {verticals.map((v) => (
+              <li key={v.slug} className={styles.glanceItem}>
+                <div className={styles.glanceTop}>
+                  <span className={styles.glanceSector}>{v.sector}</span>
+                  <span
+                    className={`${styles.badge} ${
+                      v.status === "active" ? styles.badgeActive : styles.badgeSoon
+                    }`}
+                  >
+                    {v.status === "active" ? "Active" : "Coming soon"}
+                  </span>
+                </div>
+                <h3 className={styles.glanceName}>{v.name}</h3>
+                <p className={styles.glanceTagline}>{v.tagline}</p>
+              </li>
+            ))}
+          </ul>
+
+          <div className={styles.glanceActions}>
+            <Button as="link" to="/verticals" variant="secondary">
+              View the full portfolio
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Pillars */}
       <section className={styles.features} aria-labelledby="features-heading">
         <div className="container">
           <header className={styles.sectionHeader}>
-            <span className={styles.sectionLabel}>What we offer</span>
+            <span className={styles.sectionLabel}>How we operate</span>
             <h2 className={styles.sectionTitle} id="features-heading">
-              Why Choose AURENTYR
+              A disciplined holding company
             </h2>
             <p className={styles.sectionDescription}>
-              We combine rigorous standards with creative thinking to deliver solutions that stand
-              the test of time.
+              We give each business room to run, backed by the capital, governance, and long-term
+              commitment of the group.
             </p>
           </header>
 
           <div className={styles.grid}>
-            {FEATURES.map(({ icon, title, description }) => (
+            {PILLARS.map(({ icon, title, description }) => (
               <article key={title} className={styles.card}>
                 <div className={styles.cardIcon} aria-hidden="true">
                   {icon}
@@ -98,17 +147,18 @@ export default function Home() {
       <section className={styles.cta} aria-labelledby="cta-heading">
         <div className="container">
           <h2 className={styles.sectionTitle} id="cta-heading">
-            Ready to Start?
+            Invest or partner with AURENTYR
           </h2>
           <p className={styles.sectionDescription}>
-            Let's explore how AURENTYR can bring your vision to life. Reach out and let's talk.
+            We work with investors and partners who share a long-term view. Let's talk about where
+            the group is headed.
           </p>
           <div className={styles.ctaActions}>
             <Button as="link" to="/contact" variant="primary" size="lg">
-              Contact Us
+              Get in Touch
             </Button>
             <Button as="link" to="/about" variant="outline" size="lg">
-              Learn More
+              Our Vision
             </Button>
           </div>
         </div>
