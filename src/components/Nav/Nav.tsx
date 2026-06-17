@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import Button from "@/components/Button/Button";
 import BrandMark from "@/components/BrandMark/BrandMark";
 import Sparkle from "@/components/Sparkle/Sparkle";
@@ -13,8 +13,22 @@ const NAV_LINKS = [
 
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const { pathname } = useLocation();
+  const isHome = pathname === "/";
 
   const close = useCallback(() => setIsOpen(false), []);
+
+  useEffect(() => {
+    if (!isHome) return;
+    const onScroll = () => setScrolled(window.scrollY > 48);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [isHome]);
+
+  // Transparent overlay over the homepage hero, until the user scrolls or opens the menu.
+  const overHero = isHome && !scrolled && !isOpen;
 
   useEffect(() => {
     if (!isOpen) return;
@@ -38,7 +52,7 @@ export default function Nav() {
   }, [close]);
 
   return (
-    <header className={styles.header} role="banner">
+    <header className={`${styles.header} ${overHero ? styles.overHero : ""}`} role="banner">
       <nav className="container" aria-label="Main navigation">
         <div className={styles.inner}>
           <NavLink to="/" className={styles.logo} aria-label="Aurentyr home" onClick={close}>
