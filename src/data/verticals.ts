@@ -37,24 +37,20 @@ export const verticals: Vertical[] = [
     slug: "lie",
     name: "LIE",
     sector: "Land & Property",
-    // TODO: replace placeholder copy with the real LIE positioning when finalised.
-    tagline: "Land acquisition and property development across emerging corridors.",
+    // TODO: confirm the real LIE positioning when finalised (keep it outcome-led, not mechanical).
+    tagline: "Tangible assets, held for the long term.",
     description:
-      "LIE is Aurentyr's land and property vertical — focused on acquiring, " +
-      "assembling, and developing land in high-growth corridors. It anchors the " +
-      "group's portfolio with tangible, appreciating assets and long-horizon value.",
+      "Our land and property vertical — the tangible foundation of the group, " +
+      "built to endure and to appreciate over decades.",
     status: "active",
   },
   {
     slug: "healthcare-ai",
     name: "Healthcare AI",
     sector: "AI Healthcare",
-    // TODO: replace placeholder name + copy once the healthcare vertical is named and scoped.
-    tagline: "AI-driven healthcare — applying intelligence to clinical and patient outcomes.",
-    description:
-      "Aurentyr's healthcare vertical will bring applied AI to clinical and patient " +
-      "workflows. Currently in early development; more detail will be shared as the " +
-      "venture takes shape.",
+    // Kept deliberately opaque — reveal nothing of the approach until it is ready.
+    tagline: "In development. Introduced when ready.",
+    description: "Our next vertical is taking shape. We will share more when the time is right.",
     status: "coming-soon",
   },
 

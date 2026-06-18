@@ -29,21 +29,21 @@ function ArrowRight() {
 const PILLARS: { icon: IconName; title: string; description: string }[] = [
   {
     icon: "horizon",
-    title: "Long-Horizon Ownership",
+    title: "We build to hold",
     description:
-      "We build and hold. Aurentyr backs each venture with patient capital and a multi-decade view, not a quick exit.",
+      "Patient capital and a multi-decade view. We measure success in decades, not quarters.",
   },
   {
     icon: "support",
-    title: "Operating Support",
+    title: "Autonomy with backing",
     description:
-      "Each vertical runs independently but draws on shared strategy, governance, and capital discipline from the group.",
+      "Each business runs on its own terms, with the conviction and resources of the group behind it.",
   },
   {
     icon: "expansion",
-    title: "Selective Expansion",
+    title: "Deliberate by design",
     description:
-      "We add verticals deliberately — entering sectors where durable value can be built, from land to applied AI.",
+      "We expand rarely and with intent. Few decisions, each made with care — and revealed in their time.",
   },
 ];
 
@@ -62,7 +62,7 @@ export default function Home() {
           name: "Aurentyr",
           url: "https://aurentyr.github.io",
           description:
-            "Aurentyr is a holding company building and operating a group of businesses across land, property, and AI healthcare.",
+            "Aurentyr is a holding company that builds, owns, and operates enduring businesses across distinct sectors.",
           subOrganization: verticals.map((v) => ({
             "@type": "Organization",
             name: v.name,
@@ -86,8 +86,8 @@ export default function Home() {
               <span className={styles.highlight}>one vertical at a time.</span>
             </h1>
             <p className={styles.heroDescription}>
-              Aurentyr is a holding company that builds, owns, and operates ventures across multiple
-              sectors — anchored today in land and property, and expanding into AI healthcare.
+              Aurentyr builds, owns, and operates enduring businesses across distinct sectors. We
+              invest with conviction, hold for the long term, and reveal only what is necessary.
             </p>
             <div className={styles.heroActions}>
               <Button as="link" to="/verticals" variant="primary" size="lg">
@@ -111,8 +111,7 @@ export default function Home() {
               {ACTIVE_COUNT === 1 ? "One active vertical, more on the way" : "Our verticals"}
             </h2>
             <p className={styles.sectionDescription}>
-              A focused portfolio of businesses, each operating in its own sector under the Aurentyr
-              group.
+              A focused portfolio. Each business stands on its own, under a single long-term owner.
             </p>
           </header>
 
@@ -147,13 +146,12 @@ export default function Home() {
       <section className={styles.features} aria-labelledby="features-heading">
         <div className="container">
           <header className={styles.sectionHeader}>
-            <span className={styles.sectionLabel}>How we operate</span>
+            <span className={styles.sectionLabel}>What we believe</span>
             <h2 className={styles.sectionTitle} id="features-heading">
               A disciplined holding company
             </h2>
             <p className={styles.sectionDescription}>
-              We give each business room to run, backed by the capital, governance, and long-term
-              commitment of the group.
+              A few convictions guide everything we do. The rest, we let the work speak for.
             </p>
           </header>
 
@@ -178,8 +176,8 @@ export default function Home() {
             Invest or partner with Aurentyr
           </h2>
           <p className={styles.sectionDescription}>
-            We work with investors and partners who share a long-term view. Let's talk about where
-            the group is headed.
+            We work with investors and partners who share a long-term view. Conversations begin in
+            confidence.
           </p>
           <div className={styles.ctaActions}>
             <Button as="link" to="/contact" variant="primary" size="lg">

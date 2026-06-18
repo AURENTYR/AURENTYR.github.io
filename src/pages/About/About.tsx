@@ -37,10 +37,10 @@ export default function About() {
       <section aria-label="Our thesis">
         <h2>Our Thesis</h2>
         <p>
-          Lasting value is built, not traded. We back ventures with strong fundamentals and the
-          patience to compound over time — starting with tangible assets in land and property, and
-          extending into high-potential frontiers such as AI healthcare. Each new vertical is chosen
-          deliberately, where we believe the group can create durable, defensible advantage.
+          Lasting value is built, not traded. We back enterprises with strong fundamentals and the
+          patience to compound over time. Each vertical is chosen deliberately, where we believe the
+          group can create durable advantage — and we say more through what we build than through
+          what we announce.
         </p>
       </section>
 
@@ -58,9 +58,9 @@ export default function About() {
       <section aria-label="Where we are headed">
         <h2>Where We Are Headed</h2>
         <p>
-          Today Aurentyr is anchored in land and property, with an AI healthcare venture in early
-          development. Our long-term ambition is a resilient group of complementary businesses —
-          added one vertical at a time, each strengthening the whole.
+          Today the group is anchored by its first vertical, with more in development. Our ambition
+          is a resilient family of businesses — added deliberately, each strengthening the whole. We
+          introduce each in its time.
         </p>
       </section>
 
@@ -68,8 +68,8 @@ export default function About() {
         <h2>Leadership</h2>
         {/* TODO: replace with real leadership bios and photos when available. */}
         <p>
-          Aurentyr is led by a founding team with conviction in long-horizon ownership. Detailed
-          leadership profiles will be published here soon.
+          Aurentyr is led by a founding team with conviction in long-horizon ownership. We let the
+          work speak first; profiles will follow in their time.
         </p>
       </section>
     </PageShell>
