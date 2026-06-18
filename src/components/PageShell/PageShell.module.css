@@ -5,7 +5,11 @@
 
 .hero {
   padding-block: var(--sp-16) var(--sp-12);
-  background: linear-gradient(135deg, var(--color-brand-primary) 0%, #16213e 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-brand-primary) 0%,
+    var(--color-brand-primary-2) 100%
+  );
   color: var(--color-text-inverse);
 }
 

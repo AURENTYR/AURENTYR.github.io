@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
+import BrandMark from "@/components/BrandMark/BrandMark";
+import Sparkle from "@/components/Sparkle/Sparkle";
 import styles from "./Footer.module.css";
 
 const LINKS = [
   { to: "/", label: "Home" },
+  { to: "/verticals", label: "Verticals" },
   { to: "/about", label: "About" },
-  { to: "/services", label: "Services" },
   { to: "/contact", label: "Contact" },
 ] as const;
 
@@ -13,10 +15,14 @@ export default function Footer() {
     <footer className={styles.footer} role="contentinfo">
       <div className={`container ${styles.inner}`}>
         <div>
-          <Link to="/" className={styles.logo} aria-label="AURENTYR home">
-            AURENTYR
+          <Link to="/" className={styles.logo} aria-label="Aurentyr home">
+            <BrandMark size={24} className={styles.logoMark} />
+            <span className={styles.logoText}>Aurentyr</span>
+            <Sparkle size={13} className={styles.logoSparkle} />
           </Link>
-          <p className={styles.tagline}>Delivering excellence through innovation and precision.</p>
+          <p className={styles.tagline}>
+            A holding company building enduring businesses across multiple sectors.
+          </p>
         </div>
 
         <nav aria-label="Footer navigation">
@@ -35,7 +41,7 @@ export default function Footer() {
       <div className={styles.bottom}>
         <div className="container">
           <p className={styles.copy}>
-            &copy; {new Date().getFullYear()} AURENTYR. All rights reserved.
+            &copy; {new Date().getFullYear()} Aurentyr. All rights reserved.
           </p>
         </div>
       </div>

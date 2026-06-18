@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1c3b3a" />
+      <stop offset="1" stop-color="#244e4a" />
+    </linearGradient>
+    <radialGradient id="glow" cx="0.8" cy="0.35" r="0.55">
+      <stop offset="0" stop-color="#7fa99b" stop-opacity="0.22" />
+      <stop offset="1" stop-color="#7fa99b" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <rect width="1200" height="630" fill="url(#glow)" />
+
+  <g transform="translate(100 150) scale(2.6)">
+    <polygon points="24,5 5,43 16,43 24,21" fill="#9ec3b6" />
+    <polygon points="24,5 43,43 32,43 24,21" fill="#7fa99b" />
+    <polygon points="17,32 31,32 31,38 17,38" fill="#9ec3b6" />
+  </g>
+
+  <text x="232" y="232" font-family="Georgia, 'Times New Roman', serif" font-size="92"
+    font-weight="600" letter-spacing="1" fill="#ffffff">Aurentyr</text>
+  <rect x="236" y="262" width="92" height="6" rx="3" fill="#7fa99b" />
+
+  <text x="100" y="430" font-family="Arial, Helvetica, sans-serif" font-size="34"
+    font-weight="400" fill="#d6e2dc">A holding company</text>
+  <text x="100" y="478" font-family="Arial, Helvetica, sans-serif" font-size="28"
+    font-weight="400" fill="#a7bcb5">Building enduring businesses</text>
+</svg>

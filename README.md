@@ -1,9 +1,9 @@
 ![CI](https://github.com/AURENTYR/AURENTYR.github.io/actions/workflows/ci.yml/badge.svg)
 ![Deploy](https://github.com/AURENTYR/AURENTYR.github.io/actions/workflows/jekyll-gh-pages.yml/badge.svg)
 
-# AURENTYR Website
+# Aurentyr Website
 
-Official GitHub Pages site for AURENTYR — built with React, TypeScript, and Vite.
+Official GitHub Pages site for Aurentyr — built with React, TypeScript, and Vite.
 
 ## Stack
 

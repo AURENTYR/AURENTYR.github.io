@@ -1,6 +1,6 @@
-# AURENTYR Launch Runbook
+# Aurentyr Launch Runbook
 
-Operational reference for deploying, verifying, and monitoring the AURENTYR website.
+Operational reference for deploying, verifying, and monitoring the Aurentyr website.
 
 ---
 
@@ -21,8 +21,8 @@ Run through every item before cutting a production release.
 ### Content
 
 - [ ] All page copy reviewed and approved
-- [ ] No placeholder text ("Lorem ipsum", "TODO", "FIXME") in any page
-- [ ] Contact form endpoint configured (replace the `setTimeout` stub in `src/pages/Contact/Contact.tsx`)
+- [ ] No placeholder text ("Lorem ipsum", "TODO", "FIXME") in any page (note: `verticals.ts` and the About leadership section carry intentional TODOs for real copy)
+- [ ] Contact form configured: set `VITE_FORMSPREE_ID` (see `.env.example`) as a build env var / GitHub Actions secret, and send a live test submission
 - [ ] `public/sitemap.xml` URLs match live domain
 - [ ] `public/robots.txt` `Sitemap:` URL matches live domain
 - [ ] Favicon renders correctly at 16×16, 32×32, 180×180
@@ -49,7 +49,7 @@ Run through every item before cutting a production release.
 - [ ] Accessibility ≥ 95
 - [ ] Best Practices ≥ 90
 - [ ] SEO ≥ 90
-- [ ] Run on: `/`, `/about`, `/services`, `/contact`
+- [ ] Run on: `/`, `/verticals`, `/about`, `/contact`
 
 ### Cross-browser
 
@@ -86,25 +86,29 @@ Expected deploy time: **2–4 minutes** from push to live.
 
 ## Custom domain setup
 
-> Skip if using the default `aurentyr.github.io` domain.
+> **Current status:** the site runs on the default `aurentyr.github.io` domain.
+> No `CNAME` file is committed yet — add one only when you're ready to point a
+> domain. Steps below are the complete switch-over checklist for that day.
 
 1. Purchase / configure your domain with your DNS provider
-2. Add a `CNAME` file to `public/` containing only the domain:
+2. Add a `CNAME` file to `public/` containing only the domain (Vite copies it
+   into `dist/` automatically at build time):
    ```
-   www.yourdomain.com
+   aurentyr.com
    ```
-3. At your DNS provider, add:
+3. At your DNS provider, add (apex `@` + `www`):
    | Type | Name | Value |
    |---|---|---|
-   | CNAME | www | aurentyr.github.io |
    | A | @ | 185.199.108.153 |
    | A | @ | 185.199.109.153 |
    | A | @ | 185.199.110.153 |
    | A | @ | 185.199.111.153 |
+   | CNAME | www | aurentyr.github.io |
 4. In GitHub repo → Settings → Pages → Custom domain → enter your domain
 5. Check **Enforce HTTPS** (available after DNS propagates, ~24h)
-6. Update `sitemap.xml` and `robots.txt` with the new domain
-7. Update the `og:url` in `index.html`
+6. Update all `https://aurentyr.github.io` URLs to the new domain in:
+   `public/sitemap.xml`, `public/robots.txt`, and the `og:url` / `og:image` /
+   `twitter:image` / JSON-LD `url` in `index.html` + `src/pages/Home/Home.tsx`
 
 ---
 
@@ -114,10 +118,10 @@ After every production deploy, verify these manually (or via the automated smoke
 
 | Check          | URL                    | Expected                                      |
 | -------------- | ---------------------- | --------------------------------------------- |
-| Homepage loads | `/`                    | 200, title = "AURENTYR"                       |
-| About page     | `/about`               | 200, title = "About \| AURENTYR"              |
-| Services page  | `/services`            | 200, title = "Services \| AURENTYR"           |
-| Contact page   | `/contact`             | 200, title = "Contact \| AURENTYR"            |
+| Homepage loads | `/`                    | 200, title = "Aurentyr"                       |
+| Verticals page | `/verticals`           | 200, title = "Verticals \| Aurentyr"          |
+| About page     | `/about`               | 200, title = "About \| Aurentyr"              |
+| Contact page   | `/contact`             | 200, title = "Contact \| Aurentyr"            |
 | 404 page       | `/this-does-not-exist` | Shows 404 component (client-side)             |
 | Sitemap        | `/sitemap.xml`         | 200, valid XML                                |
 | Robots         | `/robots.txt`          | 200                                           |
@@ -148,7 +152,7 @@ Recommended: **UptimeRobot** (free tier — 5-minute checks, email alerts)
 1. Sign up at [uptimerobot.com](https://uptimerobot.com)
 2. Add monitor:
    - Monitor Type: HTTP(s)
-   - Friendly Name: AURENTYR Website
+   - Friendly Name: Aurentyr Website
    - URL: `https://aurentyr.github.io`
    - Monitoring Interval: 5 minutes
 3. Add alert contact (your email)
@@ -187,7 +191,28 @@ For a faster rollback during an incident: in GitHub repo → Actions → find th
 
 ## Known limitations & backlog
 
-- **Contact form**: Currently uses a `setTimeout` stub — wire up a real backend (Formspree, Netlify Forms, or a serverless function) before launch
+- **Contact form**: Submits to Formspree (free tier: 50 submissions/month, 1 form). Requires `VITE_FORMSPREE_ID` to be set at build time; until then the form shows a `mailto:` fallback. At >50 submissions/month, upgrade Formspree (~$10/mo) or move to a serverless endpoint.
+- **Placeholder content**: `src/data/verticals.ts` seeds **LIE** (land) and **Healthcare AI** with placeholder copy (marked `TODO`); the About page leadership section is also a placeholder. Replace with final copy before a public push.
 - **Analytics**: No analytics configured — add Plausible or GoatCounter (privacy-friendly) if needed
-- **OG image**: `/assets/images/og-home.png` referenced in meta but not yet created — add a 1200×630px image
+- **OG image**: `public/og-image.svg` is generated and referenced. Some social platforms don't render SVG previews — export a 1200×630 **PNG** (`og-image.png`) and update the `og:image` / `twitter:image` URLs for best coverage.
 - **Favicon variants**: Only SVG favicon present — generate PNG fallbacks (16px, 32px, 180px Apple touch icon) with [realfavicongenerator.net](https://realfavicongenerator.net)
+
+---
+
+## Future architecture (roadmap, not yet built)
+
+The current site is a single static SPA on GitHub Pages — the lightest, free
+option for the present stage. As the group grows, the intended direction is to
+**decouple frontend / middleware / backend** for security and reliability:
+
+- **Frontend**: this static SPA, hosted on a CDN (GitHub Pages today; later a
+  dedicated host once there's budget).
+- **Middleware/API**: a thin serverless layer (e.g. Cloudflare Workers,
+  Netlify/Vercel Functions) to replace Formspree, own form handling, rate
+  limiting, and validation — keeping secrets off the client.
+- **Backend**: introduced only when a vertical needs persistent data
+  (CRM for leads, content store). Kept in its own service/network boundary.
+
+No backend is introduced yet — this section records the plan so the static
+choices made today (env-var form config, decoupled data file) stay compatible
+with that path.
