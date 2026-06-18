@@ -2,11 +2,42 @@ interface HeroSceneProps {
   className?: string;
 }
 
+const HORIZON = 486;
+const VX = 720;
+
+// Perspective grid — vertical lines fan out from the vanishing point,
+// horizontal lines bunch toward the horizon.
+const V_LINES = Array.from({ length: 23 }, (_, i) => (i - 11) * 240);
+const H_LINES = [496, 512, 534, 564, 606, 664, 742, 846, 900];
+
+// Hand-placed starfield (deterministic — no random, stays stable across renders).
+const STARS: [number, number, number][] = [
+  [120, 70, 1.4],
+  [260, 130, 1],
+  [340, 60, 1.6],
+  [470, 150, 1],
+  [560, 90, 1.3],
+  [690, 50, 1.1],
+  [780, 120, 1.5],
+  [880, 70, 1],
+  [980, 140, 1.3],
+  [1080, 60, 1.6],
+  [1180, 120, 1],
+  [1280, 80, 1.4],
+  [1360, 150, 1.1],
+  [200, 220, 1],
+  [620, 200, 1.2],
+  [1020, 230, 1],
+  [1320, 250, 1.3],
+  [60, 160, 1.1],
+  [430, 250, 1],
+  [840, 260, 1.2],
+];
+
 /**
- * Cinematic full-bleed hero backdrop — an original, layered horizon at dawn in
- * the brand's teal/sage palette. Fully owned artwork (no licensed photography),
- * scales to any viewport via preserveAspectRatio slice. Evokes land, horizon,
- * and the group's long-term thesis.
+ * Cinematic, futuristic hero backdrop — an original synthwave perspective grid
+ * receding to a glowing horizon, over a deep-space gradient. Fully owned artwork
+ * (no licensed imagery); scales to any viewport via preserveAspectRatio slice.
  */
 export default function HeroScene({ className }: HeroSceneProps) {
   return (
@@ -21,42 +52,66 @@ export default function HeroScene({ className }: HeroSceneProps) {
     >
       <defs>
         <linearGradient id="hero-sky" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#0c2425" />
-          <stop offset="0.42" stop-color="#1a4441" />
-          <stop offset="0.7" stop-color="#356a61" />
-          <stop offset="0.86" stop-color="#8db09e" />
-          <stop offset="1" stop-color="#e6e7d0" />
+          <stop offset="0" stopColor="#03110f" />
+          <stop offset="0.4" stopColor="#06201d" />
+          <stop offset="0.72" stopColor="#0a3330" />
+          <stop offset="1" stopColor="#0c1f1f" />
         </linearGradient>
-        <radialGradient id="hero-sun" cx="0.61" cy="0.64" r="0.4">
-          <stop offset="0" stop-color="#f6efd6" stop-opacity="0.6" />
-          <stop offset="1" stop-color="#f6efd6" stop-opacity="0" />
+        <radialGradient id="hero-glow" cx="0.5" cy="0.54" r="0.5">
+          <stop offset="0" stopColor="#56f0d8" stopOpacity="0.55" />
+          <stop offset="0.5" stopColor="#34dcc4" stopOpacity="0.18" />
+          <stop offset="1" stopColor="#34dcc4" stopOpacity="0" />
         </radialGradient>
+        <linearGradient id="hero-grid-fade" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stopColor="#34dcc4" stopOpacity="0.05" />
+          <stop offset="1" stopColor="#34dcc4" stopOpacity="0.5" />
+        </linearGradient>
+        <linearGradient id="hero-floor" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stopColor="#0a3330" stopOpacity="0" />
+          <stop offset="1" stopColor="#041615" stopOpacity="0.85" />
+        </linearGradient>
       </defs>
 
       <rect width="1440" height="900" fill="url(#hero-sky)" />
-      <circle cx="878" cy="576" r="420" fill="url(#hero-sun)" />
 
-      <path
-        d="M0 540 C 240 502, 480 560, 720 522 S 1200 502, 1440 540 L1440 900 L0 900 Z"
-        fill="#6f968b"
-        opacity="0.85"
-      />
-      <path
-        d="M0 602 C 300 562, 520 622, 800 586 S 1240 602, 1440 576 L1440 900 L0 900 Z"
-        fill="#43706a"
-        opacity="0.92"
-      />
-      <path
-        d="M0 672 C 280 702, 560 640, 840 682 S 1200 702, 1440 660 L1440 900 L0 900 Z"
-        fill="#2b524e"
-      />
-      <path
-        d="M0 786 C 360 742, 720 802, 1080 770 S 1380 760, 1440 782 L1440 900 L0 900 Z"
-        fill="#17312e"
-      />
+      {STARS.map(([x, y, r], i) => (
+        <circle key={i} cx={x} cy={y} r={r} fill="#cfeee7" opacity="0.7" />
+      ))}
 
-      <ellipse cx="720" cy="566" rx="760" ry="26" fill="#ffffff" opacity="0.05" />
-      <ellipse cx="720" cy="624" rx="900" ry="20" fill="#ffffff" opacity="0.04" />
+      {/* Horizon glow + sun ring */}
+      <ellipse cx={VX} cy={HORIZON} rx="560" ry="240" fill="url(#hero-glow)" />
+      <circle
+        cx={VX}
+        cy={HORIZON}
+        r="78"
+        fill="none"
+        stroke="#7df0dd"
+        strokeWidth="2"
+        opacity="0.7"
+      />
+      <circle cx={VX} cy={HORIZON} r="78" fill="#0a3330" opacity="0.35" />
+
+      {/* Perspective grid floor */}
+      <g stroke="url(#hero-grid-fade)" strokeWidth="1.5">
+        {V_LINES.map((dx, i) => (
+          <line key={i} x1={VX} y1={HORIZON} x2={VX + dx} y2={900} />
+        ))}
+      </g>
+      <g stroke="#34dcc4">
+        {H_LINES.map((y, i) => (
+          <line
+            key={i}
+            x1="0"
+            y1={y}
+            x2="1440"
+            y2={y}
+            strokeWidth={1 + i * 0.25}
+            opacity={0.08 + i * 0.05}
+          />
+        ))}
+      </g>
+
+      <rect x="0" y={HORIZON} width="1440" height={900 - HORIZON} fill="url(#hero-floor)" />
     </svg>
   );
 }

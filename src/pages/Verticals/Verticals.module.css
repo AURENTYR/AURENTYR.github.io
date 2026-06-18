@@ -18,8 +18,10 @@
 }
 
 .card:hover {
-  border-color: var(--color-border-accent);
-  box-shadow: var(--shadow-lg);
+  border-color: var(--color-glow);
+  box-shadow:
+    0 0 0 1px var(--color-glow),
+    0 10px 36px rgb(52 220 196 / 14%);
 }
 
 /* Coming-soon verticals: visually distinct but not hidden */
@@ -36,9 +38,11 @@
 }
 
 .sector {
-  font-size: var(--text-sm);
-  font-weight: var(--fw-semibold);
-  letter-spacing: 0.02em;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
   color: var(--color-text-secondary);
 }
 
