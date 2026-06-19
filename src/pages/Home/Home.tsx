@@ -23,7 +23,7 @@ export default function Home() {
           name: "Aurentyr",
           url: "https://aurentyr.github.io",
           description:
-            "Aurentyr is a holding company that builds, owns, and operates enduring businesses across distinct sectors.",
+            "Aurentyr is an enduring institution that builds and stewards exceptional businesses across distinct sectors.",
         })}
       </script>
 
@@ -33,12 +33,13 @@ export default function Home() {
         <div className={styles.heroOverlay} aria-hidden="true" />
         <div className={`container ${styles.heroInner}`}>
           <div className={styles.heroContent}>
-            <span className={styles.eyebrow}>Aurentyr — a holding company</span>
+            <span className={styles.eyebrow}>An enduring institution</span>
             <h1 className={styles.heroTitle} id="hero-heading">
               Institutions built to outlast us
             </h1>
             <p className={styles.heroLede}>
-              We build, own, and operate enduring businesses — and reveal only what is necessary.
+              We steward exceptional enterprises built to endure — and reveal only what is
+              necessary.
             </p>
             <Link to="/verticals" className={styles.heroLink}>
               The portfolio

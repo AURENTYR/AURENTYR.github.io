@@ -48,10 +48,9 @@ h4,
 h5,
 h6 {
   font-family: var(--font-display);
-  font-optical-sizing: auto;
   line-height: var(--lh-tight);
-  font-weight: var(--fw-semibold);
-  letter-spacing: -0.01em;
+  font-weight: var(--fw-medium);
+  letter-spacing: -0.02em;
   overflow-wrap: break-word;
 }
 
