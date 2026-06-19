@@ -1,50 +1,30 @@
 import PageShell from "@/components/PageShell/PageShell";
-import Button from "@/components/Button/Button";
 import { usePageTitle } from "@/hooks/usePageTitle";
 import { verticals } from "@/data/verticals";
 import styles from "./Verticals.module.css";
-
-const STATUS_LABEL: Record<string, string> = {
-  active: "Active",
-  "coming-soon": "Coming soon",
-  announced: "Announced",
-};
 
 export default function Verticals() {
   usePageTitle("Verticals");
 
   return (
     <PageShell
-      title="Our Verticals"
-      subtitle="The businesses that make up the Aurentyr group — today and as we grow."
+      title="The Portfolio"
+      subtitle="The enterprises we steward — today, and as they emerge."
+      narrow={false}
     >
-      <ul className={styles.grid} role="list">
+      <ul className={styles.list} role="list">
         {verticals.map((v) => (
-          <li
-            key={v.slug}
-            className={`${styles.card} ${v.status !== "active" ? styles.cardSoon : ""}`}
-          >
-            <div className={styles.top}>
+          <li key={v.slug} className={styles.item}>
+            <div className={styles.meta}>
               <span className={styles.sector}>{v.sector}</span>
-              <span
-                className={`${styles.badge} ${
-                  v.status === "active" ? styles.badgeActive : styles.badgeSoon
-                }`}
-              >
-                {STATUS_LABEL[v.status] ?? v.status}
+              <span className={styles.status}>
+                {v.status === "active" ? "Active" : "In development"}
               </span>
             </div>
-
-            <h2 className={styles.name}>{v.name}</h2>
-            <p className={styles.description}>{v.description}</p>
-
-            {v.href ? (
-              <div className={styles.actions}>
-                <Button as="link" to={v.href} variant="secondary" size="sm">
-                  Learn more
-                </Button>
-              </div>
-            ) : null}
+            <div className={styles.body}>
+              <h2 className={styles.name}>{v.name}</h2>
+              <p className={styles.description}>{v.description}</p>
+            </div>
           </li>
         ))}
       </ul>

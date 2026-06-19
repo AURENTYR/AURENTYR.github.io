@@ -28,9 +28,9 @@ export default function About() {
       <section aria-label="Who we are">
         <h2>Who We Are</h2>
         <p>
-          Aurentyr is a holding company. We build, own, and operate a group of businesses across
-          distinct sectors — bringing long-term capital, shared governance, and operating discipline
-          to each one, while letting every vertical run on its own terms.
+          Aurentyr is an enduring institution. We build and steward exceptional businesses across
+          distinct sectors — bringing long-term capital and quiet discipline to each, while letting
+          every enterprise stand on its own terms.
         </p>
       </section>
 

@@ -7,10 +7,10 @@ interface BrandMarkProps {
 }
 
 /**
- * Aurentyr brand emblem — a faceted "A" fusing a keystone (the arch that holds
- * the group together) with two-tone facets (the gem / value motif). Colors come
- * from the brand-accent tokens so the mark stays on-brand in any context.
- * Scales cleanly from favicon size to hero.
+ * Aurentyr monogram — a custom, geometric capital "A" built to stand alone.
+ * Monoline and single-tone (inherits currentColor), drawn with a high crossbar
+ * and a sharp apex for a restrained, timeless mark. Pairs with the lowercase
+ * "urentyr" wordmark to read as "Aurentyr".
  */
 export default function BrandMark({ size = 28, title, className }: BrandMarkProps) {
   return (
@@ -22,12 +22,16 @@ export default function BrandMark({ size = 28, title, className }: BrandMarkProp
       role={title ? "img" : "presentation"}
       aria-hidden={title ? undefined : true}
       focusable="false"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.4"
+      strokeLinecap="square"
+      strokeLinejoin="miter"
       xmlns="http://www.w3.org/2000/svg"
     >
       {title ? <title>{title}</title> : null}
-      <polygon points="24,5 5,43 16,43 24,21" fill="var(--color-brand-accent)" />
-      <polygon points="24,5 43,43 32,43 24,21" fill="var(--color-brand-accent-hover)" />
-      <polygon points="17,32 31,32 31,38 17,38" fill="var(--color-brand-accent)" />
+      <path d="M9 41 L24 6 L39 41" />
+      <path d="M16.3 24 L31.7 24" />
     </svg>
   );
 }

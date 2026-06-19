@@ -122,7 +122,7 @@ export default function Contact() {
 
   if (status === "success") {
     return (
-      <PageShell title="Get in Touch" subtitle="Partner or invest with Aurentyr">
+      <PageShell title="Correspondence" subtitle="For investors and partners, in confidence.">
         <div
           ref={successRef}
           className={styles.success}
@@ -144,8 +144,8 @@ export default function Contact() {
   return (
     <PageShell title="Get in Touch" subtitle="Partner or invest with Aurentyr">
       <p className={styles.intro}>
-        We work with investors and partners who share a long-term view of the businesses we build.
-        Tell us a little about your interest and we'll get back to you.
+        We correspond with investors and partners who share a long-term view. A few words on your
+        interest are enough; we will reply in confidence.
       </p>
 
       {status === "error" ? (

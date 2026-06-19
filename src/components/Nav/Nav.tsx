@@ -1,14 +1,13 @@
 import { useState, useEffect, useCallback } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import Button from "@/components/Button/Button";
 import BrandMark from "@/components/BrandMark/BrandMark";
-import Sparkle from "@/components/Sparkle/Sparkle";
 import styles from "./Nav.module.css";
 
 const NAV_LINKS = [
   { to: "/", label: "Home", end: true },
   { to: "/verticals", label: "Verticals", end: false },
   { to: "/about", label: "About", end: false },
+  { to: "/contact", label: "Contact", end: false },
 ] as const;
 
 export default function Nav() {
@@ -57,8 +56,7 @@ export default function Nav() {
         <div className={styles.inner}>
           <NavLink to="/" className={styles.logo} aria-label="Aurentyr home" onClick={close}>
             <BrandMark size={26} className={styles.logoMark} />
-            <span className={styles.logoText}>Aurentyr</span>
-            <Sparkle size={14} className={styles.logoSparkle} />
+            <span className={styles.logoText}>urentyr</span>
           </NavLink>
 
           <button
@@ -93,17 +91,6 @@ export default function Nav() {
                 </NavLink>
               </li>
             ))}
-            <li>
-              <Button
-                as="link"
-                to="/contact"
-                variant="primary"
-                className={styles.cta}
-                onClick={close}
-              >
-                Contact
-              </Button>
-            </li>
           </ul>
         </div>
       </nav>

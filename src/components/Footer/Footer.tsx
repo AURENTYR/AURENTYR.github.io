@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import BrandMark from "@/components/BrandMark/BrandMark";
-import Sparkle from "@/components/Sparkle/Sparkle";
 import styles from "./Footer.module.css";
 
 const LINKS = [
@@ -17,11 +16,10 @@ export default function Footer() {
         <div>
           <Link to="/" className={styles.logo} aria-label="Aurentyr home">
             <BrandMark size={24} className={styles.logoMark} />
-            <span className={styles.logoText}>Aurentyr</span>
-            <Sparkle size={13} className={styles.logoSparkle} />
+            <span className={styles.logoText}>urentyr</span>
           </Link>
           <p className={styles.tagline}>
-            A holding company building enduring businesses across multiple sectors.
+            An enduring institution, stewarding exceptional businesses for the long future.
           </p>
         </div>
 
