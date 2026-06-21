@@ -1,0 +1,80 @@
+.body {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 14rem 1fr;
+  gap: var(--sp-10);
+  align-items: start;
+  padding-block: clamp(2.5rem, 6vw, 4.5rem);
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.row:last-child {
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.rowLabel {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  padding-top: 0.2em;
+}
+
+.rowContent {
+  max-width: 46rem;
+}
+
+.rowContent p {
+  font-size: var(--text-lg);
+  line-height: var(--lh-relaxed);
+  color: var(--color-text-secondary);
+  margin-bottom: 0;
+}
+
+.rowContent p + p {
+  margin-top: var(--sp-5);
+}
+
+/* Principles grid — four convictions in a 2×2 editorial layout */
+.principles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-8) var(--sp-10);
+}
+
+.principle {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.principleLabel {
+  font-family: var(--font-display);
+  font-size: var(--text-md);
+  font-weight: var(--fw-medium);
+  color: var(--color-text-primary);
+  letter-spacing: -0.01em;
+}
+
+.principleDesc {
+  font-size: var(--text-md);
+  line-height: var(--lh-relaxed);
+  color: var(--color-text-secondary);
+}
+
+@media (width <= 767px) {
+  .row {
+    grid-template-columns: 1fr;
+    gap: var(--sp-4);
+  }
+
+  .principles {
+    grid-template-columns: 1fr;
+    gap: var(--sp-6);
+  }
+}
