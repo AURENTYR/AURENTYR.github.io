@@ -1,22 +1,27 @@
 import PageShell from "@/components/PageShell/PageShell";
 import { usePageTitle } from "@/hooks/usePageTitle";
+import styles from "./About.module.css";
 
 const PRINCIPLES = [
   {
     label: "Patient capital",
-    description: "We invest for the long term and measure success in decades, not quarters.",
+    description:
+      "We measure success in decades. Market cycles are noise; enduring value is signal.",
   },
   {
     label: "Operator-led",
-    description: "Each vertical is run by people close to its market, with real accountability.",
+    description:
+      "Each vertical is run by people close to its market, with real accountability and full authority.",
   },
   {
     label: "Disciplined growth",
-    description: "We expand only into sectors where we can build durable, defensible value.",
+    description:
+      "We enter only where we can build a durable position. Saying no is how we protect what matters.",
   },
   {
     label: "Integrity first",
-    description: "We say what we mean, honour our commitments, and build trust that compounds.",
+    description:
+      "We honour our commitments and build the kind of trust that compounds quietly over time.",
   },
 ] as const;
 
@@ -24,54 +29,70 @@ export default function About() {
   usePageTitle("About");
 
   return (
-    <PageShell title="About Aurentyr" subtitle="Our thesis, and where the group is headed">
-      <section aria-label="Who we are">
-        <h2>Who We Are</h2>
-        <p>
-          Aurentyr is an enduring institution. We build and steward exceptional businesses across
-          distinct sectors — bringing long-term capital and quiet discipline to each, while letting
-          every enterprise stand on its own terms.
-        </p>
-      </section>
+    <PageShell
+      title="The Institution"
+      subtitle="We build for the long future — and say more through what we build than through what we announce."
+    >
+      <div className={styles.body}>
+        <div className={styles.row}>
+          <span className={styles.rowLabel}>Origin</span>
+          <div className={styles.rowContent}>
+            <p>
+              Aurentyr was founded on a simple conviction: lasting institutions are built by patient
+              people who care more about the next decade than the next quarter. We are not a fund,
+              not a consultancy, and not an accelerator. We are a steward — of capital, of
+              enterprises, and of the people who run them.
+            </p>
+          </div>
+        </div>
 
-      <section aria-label="Our thesis">
-        <h2>Our Thesis</h2>
-        <p>
-          Lasting value is built, not traded. We back enterprises with strong fundamentals and the
-          patience to compound over time. Each vertical is chosen deliberately, where we believe the
-          group can create durable advantage — and we say more through what we build than through
-          what we announce.
-        </p>
-      </section>
+        <div className={styles.row}>
+          <span className={styles.rowLabel}>Thesis</span>
+          <div className={styles.rowContent}>
+            <p>
+              Lasting value is built, not traded. We back enterprises with strong fundamentals and
+              the conviction to compound over time. Each vertical is chosen deliberately — where we
+              believe the group can create defensible, durable advantage. We say more through what we
+              build than through what we announce.
+            </p>
+          </div>
+        </div>
 
-      <section aria-label="What guides us">
-        <h2>What Guides Us</h2>
-        <ul>
-          {PRINCIPLES.map(({ label, description }) => (
-            <li key={label}>
-              <strong>{label}</strong> — {description}
-            </li>
-          ))}
-        </ul>
-      </section>
+        <div className={styles.row}>
+          <span className={styles.rowLabel}>Convictions</span>
+          <div className={styles.rowContent}>
+            <ul className={styles.principles} role="list">
+              {PRINCIPLES.map(({ label, description }) => (
+                <li key={label} className={styles.principle}>
+                  <span className={styles.principleLabel}>{label}</span>
+                  <span className={styles.principleDesc}>{description}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
 
-      <section aria-label="Where we are headed">
-        <h2>Where We Are Headed</h2>
-        <p>
-          Today the group is anchored by its first vertical, with more in development. Our ambition
-          is a resilient family of businesses — added deliberately, each strengthening the whole. We
-          introduce each in its time.
-        </p>
-      </section>
+        <div className={styles.row}>
+          <span className={styles.rowLabel}>Direction</span>
+          <div className={styles.rowContent}>
+            <p>
+              Today the group is anchored by its first vertical, with more in deliberate
+              development. Our ambition is a resilient family of businesses — each chosen with
+              care, each strengthening the whole. We introduce them in their time.
+            </p>
+          </div>
+        </div>
 
-      <section aria-label="Leadership">
-        <h2>Leadership</h2>
-        {/* TODO: replace with real leadership bios and photos when available. */}
-        <p>
-          Aurentyr is led by a founding team with conviction in long-horizon ownership. We let the
-          work speak first; profiles will follow in their time.
-        </p>
-      </section>
+        <div className={styles.row}>
+          <span className={styles.rowLabel}>Leadership</span>
+          <div className={styles.rowContent}>
+            <p>
+              Aurentyr is led by a founding team with conviction in long-horizon ownership. We let
+              the work speak first.
+            </p>
+          </div>
+        </div>
+      </div>
     </PageShell>
   );
 }
