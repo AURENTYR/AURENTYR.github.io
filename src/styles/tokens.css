@@ -17,9 +17,10 @@
   /* Text */
   --color-text-primary: #1b2420;
   --color-text-secondary: #5c615a;
-  --color-text-muted: #8d9088;
+  --color-text-muted: #64675e;
   --color-text-inverse: #f4f1ea;
-  --color-text-accent: #2c3a35;
+  /* Readable bronze accent for text (AA on ivory); champagne stays decorative */
+  --color-text-accent: #7a5e2e;
 
   /* Border */
   --color-border: #d8d2c4;
