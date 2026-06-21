@@ -12,17 +12,15 @@ export default function NotFound() {
           404
         </p>
         <h1 className={styles.title} id="error-heading">
-          Page Not Found
+          This page does not exist
         </h1>
-        <p className={styles.description}>
-          The page you're looking for doesn't exist or has been moved.
-        </p>
+        <p className={styles.description}>The page you sought has moved, or never was.</p>
         <div className={styles.actions}>
           <Button as="link" to="/" variant="primary" size="lg">
-            Go Home
+            Return home
           </Button>
           <Button as="link" to="/contact" variant="secondary" size="lg">
-            Contact Us
+            Correspondence
           </Button>
         </div>
       </div>

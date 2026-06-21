@@ -8,17 +8,22 @@
 }
 
 .code {
-  font-size: 8rem;
-  font-weight: var(--fw-bold);
-  color: var(--color-primary);
+  font-family: var(--font-mono);
+  font-size: 7rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: var(--color-text-primary);
   line-height: 1;
-  margin-bottom: var(--sp-4);
-  opacity: 0.15;
+  margin-bottom: var(--sp-6);
+  opacity: 0.18;
   user-select: none;
 }
 
 .title {
-  font-size: var(--text-3xl);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
   color: var(--color-text-primary);
   margin-bottom: var(--sp-4);
 }
