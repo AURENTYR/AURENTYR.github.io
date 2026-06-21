@@ -6,6 +6,7 @@ const Home = lazy(() => import("@/pages/Home/Home"));
 const Verticals = lazy(() => import("@/pages/Verticals/Verticals"));
 const About = lazy(() => import("@/pages/About/About"));
 const Contact = lazy(() => import("@/pages/Contact/Contact"));
+const Perspective = lazy(() => import("@/pages/Perspective/Perspective"));
 const NotFound = lazy(() => import("@/pages/NotFound/NotFound"));
 
 function PageLoader() {
@@ -48,6 +49,14 @@ export default function App() {
             element={
               <Suspense fallback={<PageLoader />}>
                 <Contact />
+              </Suspense>
+            }
+          />
+          <Route
+            path="perspective"
+            element={
+              <Suspense fallback={<PageLoader />}>
+                <Perspective />
               </Suspense>
             }
           />

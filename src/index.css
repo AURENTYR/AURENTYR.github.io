@@ -1,5 +1,6 @@
 @import "./styles/tokens.css";
 @import "./styles/reset.css";
+@import "./styles/reveal.css";
 
 /* Skip link */
 .skip-link {

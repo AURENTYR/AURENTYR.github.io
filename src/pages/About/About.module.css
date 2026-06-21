@@ -67,6 +67,25 @@
   color: var(--color-text-secondary);
 }
 
+.perspectiveLink {
+  display: inline-flex;
+  align-items: center;
+  margin-top: var(--sp-6);
+  font-size: var(--text-sm);
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-text-accent);
+  text-decoration: none;
+  padding-bottom: var(--sp-1);
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--duration-normal) var(--ease-standard);
+}
+
+.perspectiveLink:hover {
+  border-bottom-color: var(--color-text-accent);
+}
+
 @media (width <= 767px) {
   .row {
     grid-template-columns: 1fr;
