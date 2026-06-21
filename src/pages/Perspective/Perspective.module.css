@@ -1,0 +1,149 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header — deep ink, monument style */
+.header {
+  padding-block: clamp(7rem, 14vw, 11rem) clamp(3rem, 7vw, 5rem);
+  background-color: var(--color-brand-primary);
+  color: var(--color-text-inverse);
+}
+
+.label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgb(255 255 255 / 50%);
+  margin-bottom: var(--sp-6);
+}
+
+.title {
+  font-size: clamp(2rem, 4.6vw, 3.5rem);
+  font-weight: var(--fw-medium);
+  letter-spacing: -0.01em;
+  color: var(--color-text-inverse);
+  line-height: 1.1;
+  margin-bottom: var(--sp-5);
+  max-width: 640px;
+}
+
+.meta {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: rgb(255 255 255 / 45%);
+  letter-spacing: 0.04em;
+}
+
+/* Body — generous reading column */
+.body {
+  flex: 1;
+  padding-block: clamp(4rem, 10vw, 8rem);
+  background-color: var(--color-bg);
+}
+
+.prose {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Lead paragraph — slightly larger, sets the register */
+.lead {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2.2vw, 1.5rem);
+  font-weight: var(--fw-regular);
+  line-height: 1.6;
+  color: var(--color-text-primary);
+  margin-bottom: var(--sp-10);
+  padding-bottom: var(--sp-10);
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+/* Drop cap on first letter of the lead */
+.lead::first-letter {
+  font-size: 3.5em;
+  font-weight: var(--fw-medium);
+  line-height: 0.85;
+  float: left;
+  margin-right: 0.08em;
+  margin-top: 0.05em;
+  color: var(--color-text-primary);
+}
+
+/* Body paragraphs */
+.prose p:not(.lead):not(.closing) {
+  font-size: clamp(1rem, 1.6vw, 1.125rem);
+  line-height: 1.8;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--sp-8);
+}
+
+/* Closing paragraph — elevated, primary colour */
+.closing {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 2vw, 1.375rem);
+  font-weight: var(--fw-regular);
+  line-height: 1.6;
+  color: var(--color-text-primary);
+  font-style: italic;
+  margin-top: var(--sp-10);
+  margin-bottom: 0;
+  padding-top: var(--sp-10);
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+/* Footer CTAs */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-6);
+  margin-top: var(--sp-16);
+  padding-top: var(--sp-8);
+  border-top: 1px solid var(--color-border-subtle);
+  flex-wrap: wrap;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  font-size: var(--text-sm);
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-accent);
+  text-decoration: none;
+  padding-bottom: var(--sp-1);
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--duration-normal) var(--ease-standard);
+}
+
+.cta:hover {
+  border-bottom-color: var(--color-text-accent);
+}
+
+.back {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color var(--duration-normal) var(--ease-standard);
+}
+
+.back:hover {
+  color: var(--color-text-secondary);
+}
+
+@media (width <= 640px) {
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .lead::first-letter {
+    font-size: 2.8em;
+  }
+}

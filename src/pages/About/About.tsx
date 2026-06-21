@@ -1,4 +1,6 @@
 import PageShell from "@/components/PageShell/PageShell";
+import Reveal from "@/components/Reveal/Reveal";
+import { Link } from "react-router-dom";
 import { usePageTitle } from "@/hooks/usePageTitle";
 import styles from "./About.module.css";
 
@@ -34,7 +36,7 @@ export default function About() {
       subtitle="We build for the long future — and say more through what we build than through what we announce."
     >
       <div className={styles.body}>
-        <div className={styles.row}>
+        <Reveal className={styles.row}>
           <span className={styles.rowLabel}>Origin</span>
           <div className={styles.rowContent}>
             <p>
@@ -44,9 +46,9 @@ export default function About() {
               enterprises, and of the people who run them.
             </p>
           </div>
-        </div>
+        </Reveal>
 
-        <div className={styles.row}>
+        <Reveal delay={80} className={styles.row}>
           <span className={styles.rowLabel}>Thesis</span>
           <div className={styles.rowContent}>
             <p>
@@ -56,42 +58,46 @@ export default function About() {
               build than through what we announce.
             </p>
           </div>
-        </div>
+        </Reveal>
 
-        <div className={styles.row}>
+        <Reveal delay={120} className={styles.row}>
           <span className={styles.rowLabel}>Convictions</span>
           <div className={styles.rowContent}>
             <ul className={styles.principles} role="list">
-              {PRINCIPLES.map(({ label, description }) => (
-                <li key={label} className={styles.principle}>
+              {PRINCIPLES.map(({ label, description }, i) => (
+                <Reveal key={label} as="li" delay={i * 60} className={styles.principle}>
                   <span className={styles.principleLabel}>{label}</span>
                   <span className={styles.principleDesc}>{description}</span>
-                </li>
+                </Reveal>
               ))}
             </ul>
           </div>
-        </div>
+        </Reveal>
 
-        <div className={styles.row}>
+        <Reveal delay={160} className={styles.row}>
           <span className={styles.rowLabel}>Direction</span>
           <div className={styles.rowContent}>
             <p>
               Today the group is anchored by its first vertical, with more in deliberate
-              development. Our ambition is a resilient family of businesses — each chosen with
-              care, each strengthening the whole. We introduce them in their time.
+              development. Our ambition is a resilient family of businesses — each chosen with care,
+              each strengthening the whole. We introduce them in their time.
             </p>
           </div>
-        </div>
+        </Reveal>
 
-        <div className={styles.row}>
+        <Reveal delay={200} className={styles.row}>
           <span className={styles.rowLabel}>Leadership</span>
           <div className={styles.rowContent}>
             <p>
               Aurentyr is led by a founding team with conviction in long-horizon ownership. We let
               the work speak first.
             </p>
+            <Link to="/perspective" className={styles.perspectiveLink}>
+              Read our founding perspective
+              <span aria-hidden="true">&nbsp;→</span>
+            </Link>
           </div>
-        </div>
+        </Reveal>
       </div>
     </PageShell>
   );

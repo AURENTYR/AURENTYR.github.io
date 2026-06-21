@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import HeroScene from "@/components/HeroScene/HeroScene";
+import Reveal from "@/components/Reveal/Reveal";
 import { usePageTitle } from "@/hooks/usePageTitle";
 import { verticals } from "@/data/verticals";
 import styles from "./Home.module.css";
@@ -52,25 +53,30 @@ export default function Home() {
       {/* Statement */}
       <section className={styles.statement} aria-label="What we are building">
         <div className="container">
-          <p className={styles.statementText}>
-            Some companies are built for a quarter. <span>Aurentyr is built for the century.</span>
-          </p>
+          <Reveal>
+            <p className={styles.statementText}>
+              Some companies are built for a quarter.{" "}
+              <span>Aurentyr is built for the century.</span>
+            </p>
+          </Reveal>
         </div>
       </section>
 
       {/* Convictions */}
       <section className={styles.section} aria-labelledby="beliefs-heading">
         <div className="container">
-          <span className={styles.sectionLabel}>What we believe</span>
-          <h2 className={styles.sectionTitle} id="beliefs-heading">
-            A few convictions guide everything.
-          </h2>
+          <Reveal>
+            <span className={styles.sectionLabel}>What we believe</span>
+            <h2 className={styles.sectionTitle} id="beliefs-heading">
+              A few convictions guide everything.
+            </h2>
+          </Reveal>
           <ul className={styles.rows} role="list">
-            {CONVICTIONS.map(({ title, line }) => (
-              <li key={title} className={styles.row}>
+            {CONVICTIONS.map(({ title, line }, i) => (
+              <Reveal key={title} as="li" delay={i * 80} className={styles.row}>
                 <span className={styles.rowTitle}>{title}</span>
                 <span className={styles.rowLine}>{line}</span>
-              </li>
+              </Reveal>
             ))}
           </ul>
         </div>
@@ -79,38 +85,44 @@ export default function Home() {
       {/* Portfolio */}
       <section className={styles.section} aria-labelledby="portfolio-heading">
         <div className="container">
-          <span className={styles.sectionLabel}>The portfolio</span>
-          <h2 className={styles.sectionTitle} id="portfolio-heading">
-            A focused group of enterprises.
-          </h2>
+          <Reveal>
+            <span className={styles.sectionLabel}>The portfolio</span>
+            <h2 className={styles.sectionTitle} id="portfolio-heading">
+              A focused group of enterprises.
+            </h2>
+          </Reveal>
           <ul className={styles.rows} role="list">
-            {verticals.map((v) => (
-              <li key={v.slug} className={styles.portfolioRow}>
+            {verticals.map((v, i) => (
+              <Reveal key={v.slug} as="li" delay={i * 100} className={styles.portfolioRow}>
                 <span className={styles.portfolioSector}>{v.sector}</span>
                 <span className={styles.portfolioName}>{v.name}</span>
                 <span className={styles.portfolioStatus}>
                   {v.status === "active" ? "Active" : "In development"}
                 </span>
-              </li>
+              </Reveal>
             ))}
           </ul>
-          <Link to="/verticals" className={styles.quietLink}>
-            All verticals
-            <span aria-hidden="true">&nbsp;→</span>
-          </Link>
+          <Reveal delay={200}>
+            <Link to="/verticals" className={styles.quietLink}>
+              All verticals
+              <span aria-hidden="true">&nbsp;→</span>
+            </Link>
+          </Reveal>
         </div>
       </section>
 
       {/* Correspondence */}
       <section className={styles.closing} aria-label="Correspondence">
         <div className="container">
-          <p className={styles.closingText}>
-            Enquiries from investors and partners are welcome, in confidence.
-          </p>
-          <Link to="/contact" className={styles.quietLink}>
-            Correspondence
-            <span aria-hidden="true">&nbsp;→</span>
-          </Link>
+          <Reveal>
+            <p className={styles.closingText}>
+              Enquiries from investors and partners are welcome, in confidence.
+            </p>
+            <Link to="/contact" className={styles.quietLink}>
+              Correspondence
+              <span aria-hidden="true">&nbsp;→</span>
+            </Link>
+          </Reveal>
         </div>
       </section>
     </>

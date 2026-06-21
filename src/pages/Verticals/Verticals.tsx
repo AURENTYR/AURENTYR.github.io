@@ -1,4 +1,5 @@
 import PageShell from "@/components/PageShell/PageShell";
+import Reveal from "@/components/Reveal/Reveal";
 import { usePageTitle } from "@/hooks/usePageTitle";
 import { verticals } from "@/data/verticals";
 import styles from "./Verticals.module.css";
@@ -13,8 +14,8 @@ export default function Verticals() {
       narrow={false}
     >
       <ul className={styles.list} role="list">
-        {verticals.map((v) => (
-          <li key={v.slug} className={styles.item}>
+        {verticals.map((v, i) => (
+          <Reveal key={v.slug} as="li" delay={i * 100} className={styles.item}>
             <div className={styles.meta}>
               <span className={styles.sector}>{v.sector}</span>
               <span className={styles.status}>
@@ -25,7 +26,7 @@ export default function Verticals() {
               <h2 className={styles.name}>{v.name}</h2>
               <p className={styles.description}>{v.description}</p>
             </div>
-          </li>
+          </Reveal>
         ))}
       </ul>
     </PageShell>
