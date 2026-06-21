@@ -26,7 +26,7 @@ const PRINCIPLES = [
 ] as const;
 
 export default function About() {
-  usePageTitle("About");
+  usePageTitle("The Institution");
 
   return (
     <PageShell
