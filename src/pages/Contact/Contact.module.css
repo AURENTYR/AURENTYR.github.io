@@ -84,7 +84,7 @@
 }
 
 .inputError {
-  border-color: var(--color-primary);
+  border-color: var(--color-danger);
 }
 
 .textarea {
@@ -94,7 +94,7 @@
 
 .error {
   font-size: var(--text-xs);
-  color: var(--color-primary);
+  color: var(--color-danger);
   min-height: 1em;
 }
 
@@ -104,8 +104,10 @@
 
 .success {
   padding: var(--sp-6);
-  background-color: rgb(22 163 74 / 8%);
-  border: 1px solid rgb(22 163 74 / 30%);
-  border-radius: var(--radius-lg);
-  color: #15803d;
+  background-color: var(--color-bg-subtle);
+  border: 1px solid var(--color-border);
+  border-left: 2px solid var(--color-border-accent);
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
+  line-height: var(--lh-relaxed);
 }
