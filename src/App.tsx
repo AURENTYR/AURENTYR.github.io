@@ -7,6 +7,7 @@ const Verticals = lazy(() => import("@/pages/Verticals/Verticals"));
 const About = lazy(() => import("@/pages/About/About"));
 const Contact = lazy(() => import("@/pages/Contact/Contact"));
 const Perspective = lazy(() => import("@/pages/Perspective/Perspective"));
+const VerticalDetail = lazy(() => import("@/pages/Verticals/VerticalDetail"));
 const NotFound = lazy(() => import("@/pages/NotFound/NotFound"));
 
 function PageLoader() {
@@ -33,6 +34,14 @@ export default function App() {
             element={
               <Suspense fallback={<PageLoader />}>
                 <Verticals />
+              </Suspense>
+            }
+          />
+          <Route
+            path="verticals/:slug"
+            element={
+              <Suspense fallback={<PageLoader />}>
+                <VerticalDetail />
               </Suspense>
             }
           />

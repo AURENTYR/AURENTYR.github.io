@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import PageShell from "@/components/PageShell/PageShell";
 import Reveal from "@/components/Reveal/Reveal";
 import { usePageTitle } from "@/hooks/usePageTitle";
@@ -25,6 +26,11 @@ export default function Verticals() {
             <div className={styles.body}>
               <h2 className={styles.name}>{v.name}</h2>
               <p className={styles.description}>{v.description}</p>
+              {v.status === "active" && (
+                <Link to={`/verticals/${v.slug}`} className={styles.viewLink}>
+                  View position <span aria-hidden="true">→</span>
+                </Link>
+              )}
             </div>
           </Reveal>
         ))}
