@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Reveal from "@/components/Reveal/Reveal";
+import ReadingProgress from "@/components/ReadingProgress/ReadingProgress";
 import { usePageTitle } from "@/hooks/usePageTitle";
 import styles from "./Perspective.module.css";
 
@@ -8,6 +9,7 @@ export default function Perspective() {
 
   return (
     <div className={styles.wrapper}>
+      <ReadingProgress />
       <header className={styles.header}>
         <div className="container">
           <Reveal>

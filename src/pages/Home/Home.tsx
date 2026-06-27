@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import HeroScene from "@/components/HeroScene/HeroScene";
 import Reveal from "@/components/Reveal/Reveal";
+import Ticker from "@/components/Ticker/Ticker";
 import { usePageTitle } from "@/hooks/usePageTitle";
 import { verticals } from "@/data/verticals";
 import styles from "./Home.module.css";
@@ -49,6 +50,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Ticker */}
+      <Ticker />
 
       {/* Statement */}
       <section className={styles.statement} aria-label="What we are building">
