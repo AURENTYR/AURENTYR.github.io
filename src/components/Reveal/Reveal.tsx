@@ -1,4 +1,4 @@
-import { useEffect, useRef, type CSSProperties, type ElementType, type ReactNode } from "react";
+import { useEffect, useRef, type CSSProperties, type ElementType, type ReactNode, type Ref } from "react";
 
 interface Props {
   children: ReactNode;
@@ -31,9 +31,8 @@ export default function Reveal({ children, delay = 0, className, as: Tag = "div"
   }, []);
 
   return (
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     <Tag
-      ref={ref as any}
+      ref={ref as Ref<HTMLElement>}
       className={className}
       style={delay ? ({ "--reveal-delay": `${delay}ms` } as CSSProperties) : undefined}
     >
