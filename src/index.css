@@ -42,14 +42,15 @@
 /* Page transition */
 @media (prefers-reduced-motion: no-preference) {
   .page-transition {
-    animation: pageFadeIn 0.32s var(--ease-out) both;
+    animation: page-fade-in 0.32s var(--ease-out) both;
   }
 
-  @keyframes pageFadeIn {
+  @keyframes page-fade-in {
     from {
       opacity: 0;
       transform: translateY(8px);
     }
+
     to {
       opacity: 1;
       transform: none;
