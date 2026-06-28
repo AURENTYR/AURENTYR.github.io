@@ -75,7 +75,7 @@
 }
 
 /* Body paragraphs */
-.prose p:not(.lead):not(.closing) {
+.prose p:not(.lead, .closing) {
   font-size: clamp(1rem, 1.6vw, 1.125rem);
   line-height: 1.8;
   color: var(--color-text-secondary);

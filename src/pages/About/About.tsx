@@ -54,8 +54,8 @@ export default function About() {
             <p>
               Lasting value is built, not traded. We back enterprises with strong fundamentals and
               the conviction to compound over time. Each vertical is chosen deliberately — where we
-              believe the group can create defensible, durable advantage. We say more through what we
-              build than through what we announce.
+              believe the group can create defensible, durable advantage. We say more through what
+              we build than through what we announce.
             </p>
           </div>
         </Reveal>

@@ -1,4 +1,11 @@
-import { useEffect, useRef, type CSSProperties, type ElementType, type ReactNode } from "react";
+import {
+  useEffect,
+  useRef,
+  type CSSProperties,
+  type ElementType,
+  type ReactNode,
+  type Ref,
+} from "react";
 
 interface Props {
   children: ReactNode;
@@ -23,7 +30,7 @@ export default function Reveal({ children, delay = 0, className, as: Tag = "div"
           observer.disconnect();
         }
       },
-      { threshold: 0.1, rootMargin: "0px 0px -40px 0px" },
+      { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
     );
 
     observer.observe(el);
@@ -31,9 +38,8 @@ export default function Reveal({ children, delay = 0, className, as: Tag = "div"
   }, []);
 
   return (
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     <Tag
-      ref={ref as any}
+      ref={ref as Ref<HTMLElement>}
       className={className}
       style={delay ? ({ "--reveal-delay": `${delay}ms` } as CSSProperties) : undefined}
     >

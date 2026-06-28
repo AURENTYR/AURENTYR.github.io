@@ -1,0 +1,11 @@
+.bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  z-index: calc(var(--z-sticky) + 10);
+  background: var(--color-brand-accent);
+  pointer-events: none;
+  transition: width 0.12s linear;
+  will-change: width;
+}
