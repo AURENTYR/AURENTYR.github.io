@@ -1,4 +1,11 @@
-import { useEffect, useRef, type CSSProperties, type ElementType, type ReactNode, type Ref } from "react";
+import {
+  useEffect,
+  useRef,
+  type CSSProperties,
+  type ElementType,
+  type ReactNode,
+  type Ref,
+} from "react";
 
 interface Props {
   children: ReactNode;
