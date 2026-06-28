@@ -6,12 +6,12 @@ interface HeroSceneProps {
 
 // Deterministic star positions: [cx, cy, r, twinkleDuration, twinkleDelay]
 const STARS: [number, number, number, number, number][] = [
-  [220,  130, 1.0, 5.2, 0.0],
-  [430,   80, 1.2, 4.1, 1.4],
-  [690,  150, 1.0, 6.8, 0.8],
-  [930,   96, 1.1, 4.9, 2.1],
+  [220, 130, 1.0, 5.2, 0.0],
+  [430, 80, 1.2, 4.1, 1.4],
+  [690, 150, 1.0, 6.8, 0.8],
+  [930, 96, 1.1, 4.9, 2.1],
   [1160, 140, 1.0, 5.7, 0.4],
-  [1290,  70, 1.2, 4.4, 1.8],
+  [1290, 70, 1.2, 4.4, 1.8],
 ];
 
 /**
@@ -59,18 +59,18 @@ export default function HeroScene({ className }: HeroSceneProps) {
     >
       <defs>
         <linearGradient id="hero-ink" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0"    stopColor="#050c0c" />
+          <stop offset="0" stopColor="#050c0c" />
           <stop offset="0.55" stopColor="#081413" />
-          <stop offset="1"    stopColor="#0a1a18" />
+          <stop offset="1" stopColor="#0a1a18" />
         </linearGradient>
         <radialGradient id="hero-aura" cx="0.5" cy="0.72" r="0.55">
           <stop offset="0" stopColor="#3f8377" stopOpacity="0.22" />
           <stop offset="1" stopColor="#3f8377" stopOpacity="0" />
         </radialGradient>
         <linearGradient id="hero-line" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0"   stopColor="#ffffff" stopOpacity="0" />
+          <stop offset="0" stopColor="#ffffff" stopOpacity="0" />
           <stop offset="0.5" stopColor="#ffffff" stopOpacity="0.16" />
-          <stop offset="1"   stopColor="#ffffff" stopOpacity="0" />
+          <stop offset="1" stopColor="#ffffff" stopOpacity="0" />
         </linearGradient>
       </defs>
 
@@ -88,12 +88,7 @@ export default function HeroScene({ className }: HeroSceneProps) {
             repeatCount="indefinite"
             additive="sum"
           />
-          <animate
-            attributeName="opacity"
-            values="0.85;1;0.85"
-            dur="6s"
-            repeatCount="indefinite"
-          />
+          <animate attributeName="opacity" values="0.85;1;0.85" dur="6s" repeatCount="indefinite" />
         </ellipse>
       </g>
 

@@ -86,8 +86,8 @@ export default function Perspective() {
               We do not know exactly what Aurentyr will look like in twenty years. We know what we
               intend it to be: a name associated with quality, with discretion, and with the kind of
               stewardship that is increasingly rare. We know the people we want to work with, and
-              the standards we will hold ourselves to. The rest — the size, the shape, the
-              portfolio — will follow from the work.
+              the standards we will hold ourselves to. The rest — the size, the shape, the portfolio
+              — will follow from the work.
             </p>
           </Reveal>
 
@@ -95,15 +95,15 @@ export default function Perspective() {
             <p>
               If you are reading this as a potential partner, an investor, or simply someone curious
               about what we are building — we welcome your interest. We are selective about whom we
-              work with, and we expect the same selectivity in return. The conversations worth having
-              are the ones where both sides have done the thinking.
+              work with, and we expect the same selectivity in return. The conversations worth
+              having are the ones where both sides have done the thinking.
             </p>
           </Reveal>
 
           <Reveal delay={200}>
             <p className={styles.closing}>
-              We are building quietly, and with conviction. There is nothing more to say than that
-              — and nothing less.
+              We are building quietly, and with conviction. There is nothing more to say than that —
+              and nothing less.
             </p>
           </Reveal>
 
